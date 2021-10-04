@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.1/tailwind.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="navbar.css">
+
+        <title>Hospital beds</title>
+        <style>
+		/* LOADER */
+.content1{
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+.loader {
+  left: 50%;
+  top: 50%;
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.loader #spinner {
+  box-sizing: border-box;
+  stroke: #3f50b5;
+  stroke-width: 3px;
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
+  animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite, rotate 1.6s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(450deg);
+    transform: rotate(450deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(450deg);
+    transform: rotate(450deg);
+  }
+}
+
+@-webkit-keyframes line {
+  0% {
+    stroke-dasharray: 2, 85.964;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  50% {
+    stroke-dasharray: 65.973, 21.9911;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 2, 85.964;
+    stroke-dashoffset: -65.973;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes line {
+  0% {
+    stroke-dasharray: 2, 85.964;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  50% {
+    stroke-dasharray: 65.973, 21.9911;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 2, 85.964;
+    stroke-dashoffset: -65.973;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+/* END lOADEr */
+            .hos_section {
+                max-width: 700px;
+                margin: 50px auto;
+                position: relative;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+                padding: 30px;
+                background-color: rgba(255, 255, 255, 0.974);
+                border-radius: 6px;
+                margin-bottom: 0;
+                margin-top: 12px;
+            }
+    
+            .hos_section2{
+                
+                max-width: 700px;
+                margin: 10px auto;
+                position: relative;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                background-color: rgba(255, 255, 255, 0.974);
+                border-radius: 6px;
+                padding-top: 10px;
+                visibility: hidden;
+    
+            }
+            
+    
+            #containHD::-webkit-scrollbar{
+                width: 5px;
+            }
+            #containHD::-webkit-scrollbar-track{
+                background: #FFFFFF;
+                border-radius: 5px;
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, .2);
+    
+            }
+            #containHD::-webkit-scrollbar-thumb{
+                border-radius: 10px;
+                background: rgb(186, 186, 186);
+            }
+    
+            .phbtn{
+                
+                display: inline-block;
+                background-color: #00c853;
+                border-radius: 4px;
+                box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+                margin: 8px 8px 0 0;
+                padding: 0 10px;
+                line-height: 26px;
+                font-weight: 500;
+                color: #fff;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+            .htype{
+                width: 190px;
+                
+                background-color: #fffbec;
+                padding: 3px 20px;
+                border-radius: 2px;
+                font-size: 14px;
+                color: #eeb700;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+                
+                
+            }
+            .tno{
+                color: #4577fff5;
+            }
+            #HstateList option {
+                font-size: 18px
+            }
+    
+            .head {
+                text-align: center;
+                color: #002060;
+                font-size: 30px;
+                font-weight: 400;
+                margin-bottom: 5px;
+            }
+            .circle{
+                background-color: rgba(255, 255, 255, 0.974);
+                height: 100px;
+                width: 100px;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: -90px auto 0;
+                margin-bottom: 10px;
+                overflow: hidden;
+                box-shadow: 0 3px 3px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            }
+            .circle-img{
+                width: 70px;
+                max-width: 100%;
+                border: 0;
+                margin: auto;
+                margin-left: 15px;
+                margin-bottom: 22px;
+                 
+    
+            }
+            
+            @media screen and (max-width: 768px) {
+                
+    
+                .hdic{
+                    float: left;
+                    margin-top: 8px;
+                    
+                }
+                .head {
+                text-align: center;
+                color: #002060;
+                font-size: 15px;
+                font-weight: 300;
+                margin-bottom: 1px;
+            }
+            }
+            
+        </style>
+    </head>
+    <body>
+	    <div class="content1" id="ggg">
+
+        
+            <div class="loader">
+                <svg viewBox="0 0 32 32" width="42" height="42">
+                    <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+                  </svg>
+              </div>
+            </div>
+        <!--========== HEADER ==========-->
+        <header class="header">
+            <div class="header__container">
+                <img src="coa.png" alt="" class="header__img">
+
+                <a href="/" class="header__logo">#IndiaFightBack</a>
+                <!-- <p class="project-names">INDIACan</p> -->
+                <a href="#MAPDIV">
+                    <div class="header__search">
+                        <input type="search" placeholder="Search" class="header__input">
+                        <i class='bx bx-search header__icon'></i>
+                    </div>
+                </a>
+    
+                <div class="header__toggle">
+                    <i class='bx bx-menu' id="header-toggle"></i>
+                </div>
+            </div>
+        </header>
+
+        <!--========== NAV ==========-->
+        <div class="nav" id="navbar">
+            <nav class="nav__container">
+                <div>
+                    <a href="#" class="nav__link nav__logo">
+                        <i class='bx bxs-virus-block nav__icon' ></i>
+                        <span class="nav__logo-name">IndiaCan</span>
+                    </a>
+    
+                    <div class="nav__list">
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle"></h3>
+                            <br>
+    
+                            <a href="index.html" class="nav__link">
+                                <i class='bx bx-home nav__icon' ></i>
+                                <span class="nav__name">Dashboard</span>
+                            </a>
+                            
+                            
+                            <a href="map.html" class="nav__link">
+                                <i class='bx bx-map-alt nav__icon' ></i>
+                                <span class="nav__name">Map</span>
+                            </a>
+                            
+
+                            <a href="register.html" class="nav__link">
+                               <i class='bx bx-building-house nav__icon' ></i>
+                                <span class="nav__name">Hospital Beds</span>
+                            </a>
+                            <a href="findoxygen.html" class="nav__link">
+                                <i class='bx bx-cloud nav__icon' ></i>
+                                <span class="nav__name">Oxygen Retailer</span>
+                            </a>
+                            <a href="team.html" class="nav__link">
+                                <i class='bx bxl-dev-to nav__icon' ></i>
+                                <span class="nav__name">Team</span>
+                            </a>
+				<a href="qrs.html" class="nav__link">
+					<i class='bx bx-qr-scan nav__icon' ></i>
+					<span class="nav__name">Scan Certificate</span>
+				    </a>
+                        </div>
+    
+                       
+                    </div>
+                </div>
+
+                <a href="#" class="nav__link nav__logout">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
+
+        <!--========== CONTENTS ==========-->
+        
+                <div class="container-fluid mt-5">
+                    <div class="row">
+                        <div class="col-md-10 col-12 mx-auto">
+                            <section class="hos_section" data-aos="fade-up">
+                                <div class="circle">
+                                    <img src="hospitalbuilding.png" alt="" class="circle-img">
+                                </div>
+                                <h3 class="head fw-bold">Hospital Bed Availability Status</h3>
+                                <p id="headinfo" class="fw-normal pt-2 pb-3 text-justify text-center text-capitalize">Check real-time availability of hospital beds of 6+ States and 100+ districts</p>
+                                <!-- {{!-- <div class="mx-auto w-50"> --}} -->
+                                <div class="row">
+                                <div class="col-sm-6 mt-sm-0 mt-3"> <span class="text-muted">Select a State</span> 
+                                <select class="form-select d-flex align-items-center my-2" id="HstateList">
+                                    <option value="null">Select State</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Uttarakhand">Uttarakhand</option>
+                                </select>
+                                </div>
+                                <div class="col-sm-6 mt-sm-0 mt-3"> <span class="text-muted">Select a District</span>
+                                <select class="form-select d-flex align-items-center my-2 " id="HdistrictList">
+                                    <option value="null">Please Select District</option>
+                                </select>
+                                 </div>
+            
+                                </div>
+                                <!-- {{!-- </div> --}} -->
+                                <p id="headinfo" class="fw-normal pt-1 pb-0 text-justify text-muted text-capitalize"><i class='bx bxs-file-json'></i> &nbsp; Data reported by Nodal Officers of each dedicated COVID-19 hospitals.</p>
+                                </section>
+                                <section class="hos_section2" id="myP">
+                                    
+                                    <p id="headinfo" class="fw-normal pt-1 pb-0 mt-0 mb-0 text-justify text-muted text-capitalize"><i class='bx bxs-coin-stack'></i> &nbsp; accessing government database using covidBedsIndia.org API</p>
+            
+                                <div id="containHD">
+            
+                                </div>
+            
+                            </section>
+                            </div></div></div>
+            
+
+<!--========== CDN JS ==========-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js" integrity="sha512-NWNl2ZLgVBoi6lTcMsHgCQyrZVFnSmcaa3zRv0L3aoGXshwoxkGs3esa9zwQHsChGRL4aLDnJjJJeP6MjPX46Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+    var H_stateList = document.getElementById("HstateList");
+    var H_districtList = document.getElementById("HdistrictList");
+    var HosDetails = document.getElementById("containHD");
+    
+	function loader() {
+    $('#ggg').hide();
+        }
+        window.onload = loader;
+	
+     H_stateList.addEventListener("change", function(){
+	$('#ggg').show();
+     
+         var state = H_stateList.value;
+         if(state == "West Bengal"){
+
+             H_districtList.innerText = "";
+                     
+             fetch("https://api.covidbedsindia.in/v1/storages/608983fc03eef384cad05a78/West%20Bengal")
+                 .then((res1) => res1.json())
+                 .then((data1) =>{
+		     $('#ggg').hide();
+                     let newArray = [];
+             
+                     // Declare an empty object
+                     let uniqueObject = {};
+                     
+                     // Loop for the array elements
+                     for (let i in data1) {
+             
+                         // Extract the title
+                         objTitle = data1[i]['DISTRICT'];
+             
+                         // Use the title as the index
+                         uniqueObject[objTitle] = data1[i];
+                     }
+                     
+                     // Loop to push unique object into array
+                     for (i in uniqueObject) {
+                         newArray.push(uniqueObject[i]);
+                     }
+                     console.log(newArray);
+                     //THIS 4 Line have to be given to  
+                     var option1 = document.createElement("option");
+                     option1.text = "Please Select District";
+                     option1.value = "Null";
+                     H_districtList.add(option1);
+
+                     
+
+                     for(var j=0; j < newArray.length; j++){
+                     // console.log(data1[i].DISTRICT);
+                         //var dlist = newArray[j].DISTRICT
+                         //console.log(dlist);
+                         
+                         
+                         
+                         
+                         var option1 = document.createElement("option");
+                         option1.text = newArray[j].DISTRICT
+                         option1.value = newArray[j].DISTRICT
+                         H_districtList.add(option1);
+
+                     }
+
+             }); //end fetch data for WB
+         }else if(state == "Andhra Pradesh"){
+             H_districtList.innerText = "";
+
+             fetch("https://api.covidbedsindia.in/v1/storages/608982e003eef31f34d05a71/Andhra%20Pradesh")
+                 .then((res2) => res2.json())
+                 .then((data2) =>{
+		     $('#ggg').hide();
+                     let newArrayAP = [];
+                     let uniqueObjectAP = {};
+                     for (let k in data2) {
+                     objTitleAP = data2[k]['DISTRICT'];
+                     uniqueObjectAP[objTitleAP] = data2[k];
+                     }
+                     for (k in uniqueObjectAP) 
+                     {
+                         newArrayAP.push(uniqueObjectAP[k]);
+                     }
+                     console.log(newArrayAP);
+
+                     var option1 = document.createElement("option");
+                     option1.text = "Please Select District";
+                     option1.value = "Null";
+                     H_districtList.add(option1);
+
+                     for(var l=0; l < newArrayAP.length; l++){
+               
+                         var option1 = document.createElement("option");
+                         
+                         option1.text = newArrayAP[l].DISTRICT
+                         option1.value = newArrayAP[l].DISTRICT
+                         H_districtList.add(option1);
+
+                     }
+
+                     
+
+                 }); //end of AP fetch
+
+             
+
+             
+         }else if(state == "Bihar"){
+             H_districtList.innerText = "";
+             fetch("https://api.covidbedsindia.in/v1/storages/60a62cf2e75f9c105696eb38/Bihar")
+             .then((res3) => res3.json())
+             .then((data3) =>{
+		     $('#ggg').hide();
+                 let newArrayBR = [];
+                 let uniqueObjectBR = {};
+                 for (let n in data3) {
+                 objTitleBR = data3[n]['DISTRICT'];
+                 uniqueObjectBR[objTitleBR] = data3[n];
+                 }
+                 for (n in uniqueObjectBR) 
+                 {
+                     newArrayBR.push(uniqueObjectBR[n]);
+                 }
+                 console.log(newArrayBR);
+                 var option1 = document.createElement("option");
+                 option1.text = "Please Select District";
+                 option1.value = "Null";
+                 H_districtList.add(option1);
+
+                 for(var o=0; o < newArrayBR.length; o++){
+               
+                     var option1 = document.createElement("option");
+                         
+                     option1.text = newArrayBR[o].DISTRICT
+                     option1.value = newArrayBR[o].DISTRICT
+                     H_districtList.add(option1);
+
+                 }
+
+             });  //END OF BIHAR FETCH
+
+         }else if(state == "Chhattisgarh"){
+             H_districtList.innerText = "";
+             fetch("https://api.covidbedsindia.in/v1/storages/6089833203eef38338d05a73/Chhattisgarh")
+             .then((res4) => res4.json())
+             .then((data4) =>{
+		     $('#ggg').hide();
+                 let newArrayCH = [];
+                 let uniqueObjectCH = {};
+                 for (let p in data4) {
+                 objTitleCH = data4[p]['DISTRICT'];
+                 uniqueObjectCH[objTitleCH] = data4[p];
+                 }
+                 for (p in uniqueObjectCH) 
+                 {
+                     newArrayCH.push(uniqueObjectCH[p]);
+                 }
+                 console.log(newArrayCH);
+                 var option1 = document.createElement("option");
+                 option1.text = "Please Select District";
+                 option1.value = "Null";
+                 H_districtList.add(option1);
+
+                 for(var q=0; q < newArrayCH.length; q++){
+               
+                     var option1 = document.createElement("option");
+                         
+                     option1.text = newArrayCH[q].DISTRICT
+                     option1.value = newArrayCH[q].DISTRICT
+                     H_districtList.add(option1);
+
+                 }
+
+             }); //END OF CHHATTISGARH FETCH
+
+
+
+         }else if(state == "Rajasthan"){
+             H_districtList.innerText = "";
+             fetch("https://api.covidbedsindia.in/v1/storages/608983ed03eef39bb4d05a77/Rajasthan")
+             .then((res5) => res5.json())
+             .then((data5) =>{
+		     $('#ggg').hide();
+                 let newArrayRJ = [];
+                 let uniqueObjectRJ = {};
+                 for (let r in data5) {
+                 objTitleRJ = data5[r]['DISTRICT'];
+                 uniqueObjectRJ[objTitleRJ] = data5[r];
+                 }
+                 for (r in uniqueObjectRJ) 
+                 {
+                     newArrayRJ.push(uniqueObjectRJ[r]);
+                 }
+                 console.log(newArrayRJ);
+                 var option1 = document.createElement("option");
+                 option1.text = "Please Select District";
+                 option1.value = "Null";
+                 H_districtList.add(option1);
+
+                 for(var s=0; s < newArrayRJ.length; s++){
+               
+                     var option1 = document.createElement("option");
+                         
+                     option1.text = newArrayRJ[s].DISTRICT
+                     option1.value = newArrayRJ[s].DISTRICT
+                     H_districtList.add(option1);
+
+                 }
+
+             }); //END OF RAJESHTHAN DISTRICT FETCH
+
+         }else if(state == "Tamil Nadu"){
+             H_districtList.innerText = "";
+             fetch("https://api.covidbedsindia.in/v1/storages/6089820e03eef3b588d05a6d/Tamil%20Nadu")
+             .then((res6) => res6.json())
+             .then((data6) =>{
+		     $('#ggg').hide();
+                 let newArrayTN = [];
+                 let uniqueObjectTN = {};
+                 for (let t in data6) {
+                 objTitleTN = data6[t]['DISTRICT'];
+                 uniqueObjectTN[objTitleTN] = data6[t];
+                 }
+                 for (t in uniqueObjectTN) 
+                 {
+                     newArrayTN.push(uniqueObjectTN[t]);
+                 }
+                 console.log(newArrayTN);
+                 var option1 = document.createElement("option");
+                 option1.text = "Please Select District";
+                 option1.value = "Null";
+                 H_districtList.add(option1);
+
+                 for(var u=0; u < newArrayTN.length; u++){
+               
+                     var option1 = document.createElement("option");
+                         
+                     option1.text = newArrayTN[u].DISTRICT
+                     option1.value = newArrayTN[u].DISTRICT
+                     H_districtList.add(option1);
+
+                 }
+
+             }); //END OF TAMIL NADU FETCH
+
+         }else if(state == "Uttarakhand"){
+             H_districtList.innerText = "";
+             fetch("https://api.covidbedsindia.in/v1/storages/608d542333382c01aecf8c95/Uttarakhand")
+             .then((res7) => res7.json())
+             .then((data7) =>{
+		     $('#ggg').hide();
+                 let newArrayUK = [];
+                 let uniqueObjectUK = {};
+                 for (let v in data7) {
+                 objTitleUK = data7[v]['DISTRICT'];
+                 uniqueObjectUK[objTitleUK] = data7[v];
+                 }
+                 for (v in uniqueObjectUK) 
+                 {
+                     newArrayUK.push(uniqueObjectUK[v]);
+                 }
+                 console.log(newArrayUK);
+                 var option1 = document.createElement("option");
+                 option1.text = "Please Select District";
+                 option1.value = "Null";
+                 H_districtList.add(option1);
+                 for(var w=0; w < newArrayUK.length; w++){
+               
+                     var option1 = document.createElement("option");
+                         
+                     option1.text = newArrayUK[w].DISTRICT
+                     option1.value = newArrayUK[w].DISTRICT
+                     H_districtList.add(option1);
+
+                 }
+
+             }); //END OF UTARAKHAND FETCH
+
+         }
+     });
+
+
+
+     //CALLING FUNCTION AND PASSING PARAMETER
+
+     H_districtList.addEventListener("change", function () {
+         var state_dist = H_districtList.value
+         var state_Rename = H_stateList.value
+         console.log(state_dist);
+
+         document.getElementById("myP").style.visibility = "visible";
+         HosDetails.style.overflowY = "scroll";
+         HosDetails.style.height = "700px";
+         
+         if(state_Rename == "West Bengal"){
+             WBD(state_dist);
+
+             //console.log("WEST BENGAL FUNCTION SHOULD BE RUN")
+
+         }else if(state_Rename == "Andhra Pradesh"){
+             APD(state_dist);
+
+             //console.log("AP FUNCTION SHOULD BE RUN")
+
+         }else if(state_Rename == "Bihar"){
+             BRD(state_dist);
+
+             //console.log("BR FUNCTION SHOULD BE RUN")
+         }else if(state_Rename == "Chhattisgarh"){
+
+             CHD(state_dist);
+
+             //console.log("CH FUNCTION SHOULD BE RUN")
+
+         }else if(state_Rename == "Rajasthan"){
+             RJD(state_dist);
+
+             //console.log("RJ FUNCTION SHOULD BE RUN")
+
+         }else if(state_Rename == "Tamil Nadu"){
+             TND(state_dist);
+             //console.log("TN FUNCTION SHOULD BE RUN")
+
+
+         }else if(state_Rename == "Uttarakhand"){
+             UKD(state_dist);
+             //console.log("UK FUNCTION SHOULD BE RUN")
+
+
+         }
+     });
+
+     //INDIVUAL FUNCTION DECLARATION
+
+     function WBD(dname) {
+         fetch("https://api.covidbedsindia.in/v1/storages/608983fc03eef384cad05a78/West%20Bengal")
+                 .then((reswb) => reswb.json())
+                 .then((datawb) =>{
+                     HosDetails.innerHTML = " ";
+                     for(var m=0; m < datawb.length; m++){
+                         if(datawb[m].DISTRICT == dname){
+                             console.log(datawb[m].HOSPITAL_NAME);
+
+                             var bapdiv = document.createElement("div");
+                         bapdiv.innerHTML =
+                             "<div class='mb-2 mt-4'>"+
+     "<div class='max-w-md md:max-w-2xl px-2'>"+
+         "<div class='bg-white shadow-xl rounded-lg overflow-hidden md:flex'>"+
+             
+             "<div class='min-w-full'>"+
+                 "<div class='p-4 md:p-5'>"+
+                     "<p class='font-bold text-xl md:text-2xl'>"+ datawb[m].HOSPITAL_NAME +"</p>"+
+                     "<p class='text-gray-600 md:text-base'><i class='bx bxs-map'></i>  "+ datawb[m].ADDRESS +"</p>"+
+                     "<p class='phbtn text-gray-600 md:text-base  mb-3'><i class='bx bxs-phone'></i>  "+ datawb[m].CONTACT +"</p> <br>"+
+                     "<span class='htype mt-2'><i class='bx bx-bookmarks'></i>  "+ datawb[m].TYPE +"</span>"+
+                     "<a class='hdic px-2 py-0.5 md:px-2 float-right bg-indigo-700 hover:bg-indigo-600 rounded shadow-md text-white' href="+ datawb[m].LOCATION +" target=_blank rel=noopener noreferrer><i class='bx bxs-navigation'></i>  Direction</a>"+
+                 "</div>"+
+                 "<div class='p-4 md:p-5 bg-gray-100'>"+
+                   "<div class='row'>"+
+                         "<div class='col-6 text-center'>"+ 
+                             "<p class='text-green-400 text-4xl font-bold'>" + datawb[m].VACANT + "</p>" +
+                             "<p class='text-lg font-normal'> VACANT BEDS </p>" +
+                         
+                         
+                         "</div>"+
+                         "<div class='col-6 text-center'>"+
+                         "<p class='tno text-4xl font-bold'>" + datawb[m].TOTAL + "</p>" +
+                         "<p class='text-lg font-normal'> TOTAL BEDS </p>" +
+                         
+                         "</div>"+
+                     
+                     "</div>"+
+                     
+                 "</div>"+
+             "</div>"+
+         "</div>"+
+     "</div>"+
+ "</div>";
+
+
+
+                             document.getElementById("containHD").appendChild(bapdiv);
+                         }
+                     }
+                 });
+
+     }
+     function APD(dname) {
+         fetch("https://api.covidbedsindia.in/v1/storages/608982e003eef31f34d05a71/Andhra%20Pradesh")
+                 .then((resap) => resap.json())
+                 .then((dataap) =>{
+                     HosDetails.innerHTML = " ";
+                     for(var m=0; m < dataap.length; m++){
+                         if(dataap[m].DISTRICT == dname){
+                             console.log(dataap[m].HOSPITAL_NAME);
+                             var totalava = Number(dataap[m].ICU_TOTAL) + Number(dataap[m].OXYGEN_GENERAL_TOTAL) + Number(dataap[m].GENERAL_TOTAL);
+                             var vacantava = Number(dataap[m].ICU_AVAILABLE) + Number(dataap[m].OXYGEN_GENERAL_AVAILABLE) + Number(dataap[m].GENERAL_AVAILABLE);
+                             var bapdiv = document.createElement("div");
+                         bapdiv.innerHTML =
+                             "<div class='mb-2 mt-4'>"+
+     "<div class='max-w-md md:max-w-2xl px-2'>"+
+         "<div class='bg-white shadow-xl rounded-lg overflow-hidden md:flex'>"+
+             
+             "<div class='min-w-full'>"+
+                 "<div class='p-4 md:p-5'>"+
+                     "<p class='font-bold text-xl md:text-2xl'>"+ dataap[m].HOSPITAL_NAME +"</p>"+
+                     "<p class='text-gray-600 md:text-base'><i class='bx bxs-map'></i>  "+ dataap[m].DISTRICT + ", " + dataap[m].STEIN_ID +"</p>"+
+                     "<p class='phbtn text-gray-600 md:text-base  mb-3'><i class='bx bxs-phone'></i>  "+ dataap[m].CONTACT +"</p> <p class='phbtn text-gray-600 md:text-base  mb-3'><i class='bx bxs-user-voice'></i> Nodal Officer:  "+ dataap[m].NODAL_OFFICER_CONTACT +"</p> <br>"+
+                     "<span class='htype mt-2'><i class='bx bxs-first-aid'></i>  VENTILATOR: <b>"+ dataap[m].VENTILATOR +"</b></span>"+
+                     "<a class='hdic px-2 py-0.5 md:px-2 float-right bg-indigo-700 hover:bg-indigo-600 rounded shadow-md text-white' href="+ dataap[m].LOCATION +" target=_blank rel=noopener noreferrer><i class='bx bxs-navigation'></i>  Direction</a>"+
+                 "</div>"+
+                 "<div class='p-4 md:p-5 bg-gray-100'>"+
+                   "<div class='row'>"+
+                         "<div class='col-6 text-center'>"+ 
+                             "<p class='text-green-400 text-4xl font-bold'>" + vacantava + "</p>" +
+                             "<p class='text-lg font-normal'> VACANT BEDS </p>" +
+                         
+                         
+                         "</div>"+
+                         "<div class='col-6 text-center'>"+
+                         "<p class='tno text-4xl font-bold'>" + totalava + "</p>" +
+                         "<p class='text-lg font-normal'> TOTAL BEDS </p>" +
+                         
+                         "</div>"+
+                     
+                     "</div>"+
+                     
+                 "</div>"+
+             "</div>"+
+         "</div>"+
+     "</div>"+
+ "</div>";
+                             
+                             
+                             document.getElementById("containHD").appendChild(bapdiv);
+                         }
+                     }
+
+
+                 });
+
+     }
+     function BRD(dname){
+         fetch("https://api.covidbedsindia.in/v1/storages/60a62cf2e75f9c105696eb38/Bihar")
+         .then((resbr) => resbr.json())
+         .then((databr) =>{
+             HosDetails.innerHTML = " ";
+             for(var m=0; m < databr.length; m++){
+                 if(databr[m].DISTRICT == dname){
+                     console.log(databr[m].FACILITY_NAME);
+                     var totalava = databr[m].TOTAL_BEDS
+                     var vacantava = databr[m].VACANT
+                     var bapdiv = document.createElement("div");
+                     bapdiv.innerHTML =
+                             "<div class='mb-2 mt-4'>"+
+     "<div class='max-w-md md:max-w-2xl px-2'>"+
+         "<div class='bg-white shadow-xl rounded-lg overflow-hidden md:flex'>"+
+             
+             "<div class='min-w-full'>"+
+                 "<div class='p-4 md:p-5'>"+
+                     "<p class='font-bold text-xl md:text-2xl'>"+ databr[m].FACILITY_NAME +"</p>"+
+                     "<p class='text-gray-600 md:text-base'><i class='bx bxs-map'></i>  "+ databr[m].DISTRICT + ", " + databr[m].STEIN_ID +"</p>"+
+                     "<p class='phbtn text-gray-600 md:text-base  mb-3'><i class='bx bxs-phone'></i>  "+ databr[m].CONTACT +"</p> <br>"+
+                     "<span class='htype mt-2'><i class='bx bxs-first-aid'></i>  CATEGORY: <b>"+ databr[m].CATEGORY +"</b></span>"+
+                     "<a id='dic' class='hdic px-2 py-0.5 md:px-2 float-right bg-indigo-700 hover:bg-indigo-600 rounded shadow-md text-white' target=_blank rel=noopener noreferrer><i class='bx bxs-navigation'></i>  Direction</a>"+
+                 "</div>"+
+                 "<div class='p-4 md:p-5 bg-gray-100'>"+
+                   "<div class='row'>"+
+                         "<div class='col-6 text-center'>"+ 
+                             "<p class='text-green-400 text-4xl font-bold'>" + vacantava + "</p>" +
+                             "<p class='text-lg font-normal'> VACANT BEDS </p>" +
+                         
+                         
+                         "</div>"+
+                         "<div class='col-6 text-center'>"+
+                         "<p class='tno text-4xl font-bold'>" + totalava + "</p>" +
+                         "<p class='text-lg font-normal'> TOTAL BEDS </p>" +
+                         
+                         "</div>"+
+                     
+                     "</div>"+
+                     
+                 "</div>"+
+             "</div>"+
+         "</div>"+
+     "</div>"+
+ "</div>";
+                             
+                             
+                             document.getElementById("containHD").appendChild(bapdiv);
+                         }
+                     }
+
+
+         });
+     }
+
+     function CHD(dname){
+         fetch("https://api.covidbedsindia.in/v1/storages/6089833203eef38338d05a73/Chhattisgarh")
+         .then((resch) => resch.json())
+         .then((datach) =>{
+             HosDetails.innerHTML = " ";
+             for(var m=0; m < datach.length; m++){
+                 if(datach[m].DISTRICT == dname){
+                     console.log(datach[m].HOSPITAL_NAME);
+                     var totalava = datach[m].BEDS_TOTAL
+                     var vacantava = datach[m].BEDS_VACANT
+                     var bapdiv = document.createElement("div");
+                     bapdiv.innerHTML =
+                             "<div class='mb-2 mt-4'>"+
+     "<div class='max-w-md md:max-w-2xl px-2'>"+
+         "<div class='bg-white shadow-xl rounded-lg overflow-hidden md:flex'>"+
+             
+             "<div class='min-w-full'>"+
+                 "<div class='p-4 md:p-5'>"+
+                     "<p class='font-bold text-xl md:text-2xl'>"+ datach[m].HOSPITAL_NAME +"</p>"+
+                     "<p class='text-gray-600 md:text-base'><i class='bx bxs-map'></i>  "+ datach[m].DISTRICT + ", " + datach[m].STEIN_ID +"</p>"+
+                     "<p class='phbtn text-gray-600 md:text-base  mb-3'><i class='bx bxs-phone'></i>  "+ datach[m].CONTACT +"</p> <br>"+
+                     "<span class='htype mt-2'><i class='bx bxs-first-aid'></i>  CATEGORY: <b>"+ datach[m].CATEGORY +"</b></span>"+
+                     "<a class='hdic px-2 py-0.5 md:px-2 float-right bg-indigo-700 hover:bg-indigo-600 rounded shadow-md text-white' href="+ datach[m].LOCATION +" target=_blank rel=noopener noreferrer><i class='bx bxs-navigation'></i>  Direction</a>"+
+                 "</div>"+
+                 "<div class='p-4 md:p-5 bg-gray-100'>"+
+                   "<div class='row'>"+
+                         "<div class='col-6 text-center'>"+ 
+                             "<p class='text-green-400 text-4xl font-bold'>" + vacantava + "</p>" +
+                             "<p class='text-lg font-normal'> VACANT BEDS </p>" +
+                         
+                         
+                         "</div>"+
+                         "<div class='col-6 text-center'>"+
+                         "<p class='tno text-4xl font-bold'>" + totalava + "</p>" +
+                         "<p class='text-lg font-normal'> TOTAL BEDS </p>" +
+                         
+                         "</div>"+
+                     
+                     "</div>"+
+                     
+                 "</div>"+
+             "</div>"+
+         "</div>"+
+     "</div>"+
+ "</div>";
+                             
+                             
+                             document.getElementById("containHD").appendChild(bapdiv);
+                         }
+                     }
+
+
+         });
+
+
+
+
+     }
+
+     function RJD(dname){
+         fetch("https://api.covidbedsindia.in/v1/storages/608983ed03eef39bb4d05a77/Rajasthan")
+         .then((resrj) => resrj.json())
+         .then((datarj) =>{
+             HosDetails.innerHTML = " ";
+                     for(var m=0; m < datarj.length; m++){
+                         if(datarj[m].DISTRICT == dname){
+                             console.log(datarj[m].HOSPITAL_NAME);
+                             var totalava = Number(datarj[m].GENERAL_BEDS_TOTAL) + Number(datarj[m].OXYGEN_BEDS_TOTAL) + Number(datarj[m].ICU_BEDS_TOTAL) + Number(datarj[m].VENTILATOR_BEDS_TOTAL);
+                             var vacantava = Number(datarj[m].OXYGEN_BEDS_AVAILABLE) + Number(datarj[m].GENERAL_BEDS_AVAILABLE) + Number(datarj[m].ICU_BEDS_AVAILABLE) + Number(datarj[m].VENTILATOR_BEDS_AVAILABLE);
+                             var bapdiv = document.createElement("div");
+                         bapdiv.innerHTML =
+                             "<div class='mb-2 mt-4'>"+
+     "<div class='max-w-md md:max-w-2xl px-2'>"+
+         "<div class='bg-white shadow-xl rounded-lg overflow-hidden md:flex'>"+
+             
+             "<div class='min-w-full'>"+
+                 "<div class='p-4 md:p-5'>"+
+                     "<p class='font-bold text-xl md:text-2xl'>"+ datarj[m].HOSPITAL_NAME +"</p>"+
+                     "<p class='text-gray-600 md:text-base'><i class='bx bxs-map'></i>  "+ datarj[m].DISTRICT + ", " + datarj[m].STEIN_ID +"</p>"+
+                     "<p class='phbtn text-gray-600 md:text-base  mb-3'><i class='bx bxs-phone'></i>  "+ datarj[m].HOSPITAL_HELPLINE_NO +"</p> <br>"+
+                     "<span class='htype mt-2'><i class='bx bxs-phone-call'></i>  District Control Room: <b>"+ datarj[m].DISTRICT_CONTROL_ROOM +"</b></span>"+
+                     "<a class='hdic px-2 py-0.5 md:px-2 float-right bg-indigo-700 hover:bg-indigo-600 rounded shadow-md text-white' href="+ datarj[m].LOCATION +" target=_blank rel=noopener noreferrer><i class='bx bxs-navigation'></i>  Direction</a>"+
+                 "</div>"+
+                 "<div class='p-4 md:p-5 bg-gray-100'>"+
+                   "<div class='row'>"+
+                         "<div class='col-6 text-center'>"+ 
+                             "<p class='text-green-400 text-4xl font-bold'>" + vacantava + "</p>" +
+                             "<p class='text-lg font-normal'> VACANT BEDS </p>" +
+                         
+                         
+                         "</div>"+
+                         "<div class='col-6 text-center'>"+
+                         "<p class='tno text-4xl font-bold'>" + totalava + "</p>" +
+                         "<p class='text-lg font-normal'> TOTAL BEDS </p>" +
+                         
+                         "</div>"+
+                     
+                     "</div>"+
+                     
+                 "</div>"+
+             "</div>"+
+         "</div>"+
+     "</div>"+
+ "</div>";
+                             
+                             
+                             document.getElementById("containHD").appendChild(bapdiv);
+                         }
+                     }
+
+         });
+
+     }
+
+     function TND(dname){
+         fetch("https://api.covidbedsindia.in/v1/storages/6089820e03eef3b588d05a6d/Tamil%20Nadu")
+         .then((restn) => restn.json())
+         .then((datatn) =>{
+             console.log(datatn);
+             HosDetails.innerHTML = " ";
+                     for(var m=0; m < datatn.length; m++){
+                         if(datatn[m].DISTRICT == dname){
+                             console.log(datatn[m].HOSPITAL_NAME);
+                             var totalava = Number(datatn[m].BEDS_FOR_SUSPECTED_CASES_TOTAL) + Number(datatn[m].OXYGEN_SUPPORTED_BEDS_TOTAL) + Number(datatn[m].NONOXYGEN_SUPPORTED_BEDS_TOTAL) + Number(datatn[m].ICU_BEDS_TOTAL);
+                             var vacantava = Number(datatn[m].BEDS_FOR_SUSPECTED_CASES_VACANT) + Number(datatn[m].OXYGEN_SUPPORTED_BEDS_VACANT) + Number(datatn[m].NONOXYGEN_SUPPORTED_BEDS_VACANT) + Number(datatn[m].ICU_BEDS_VACANT);
+                             var bapdiv = document.createElement("div");
+                         bapdiv.innerHTML =
+                             "<div class='mb-2 mt-4'>"+
+     "<div class='max-w-md md:max-w-2xl px-2'>"+
+         "<div class='bg-white shadow-xl rounded-lg overflow-hidden md:flex'>"+
+             
+             "<div class='min-w-full'>"+
+                 "<div class='p-4 md:p-5'>"+
+                     "<p class='font-bold text-xl md:text-2xl'>"+ datatn[m].HOSPITAL_NAME +"</p>"+
+                     "<p class='text-gray-600 md:text-base'><i class='bx bxs-map'></i>  "+ datatn[m].DISTRICT + ", " + datatn[m].STEIN_ID +"</p>"+
+                     "<p class='phbtn text-gray-600 md:text-base  mb-3'><i class='bx bxs-phone'></i>  "+ datatn[m].CONTACT +"</p> <br>"+
+                     "<span class='htype mt-2'><i class='bx bxs-first-aid' ></i>  VENTILATOR: <b>"+ datatn[m].VENTILATOR_VACANT +"</b></span>"+
+                     "<a class='hdic px-2 py-0.5 md:px-2 float-right bg-indigo-700 hover:bg-indigo-600 rounded shadow-md text-white' href="+ datatn[m].LOCATION +" target=_blank rel=noopener noreferrer><i class='bx bxs-navigation'></i>  Direction</a>"+
+                 "</div>"+
+                 "<div class='p-4 md:p-5 bg-gray-100'>"+
+                   "<div class='row'>"+
+                         "<div class='col-6 text-center'>"+ 
+                             "<p class='text-green-400 text-4xl font-bold'>" + vacantava + "</p>" +
+                             "<p class='text-lg font-normal'> VACANT BEDS </p>" +
+                         
+                         
+                         "</div>"+
+                         "<div class='col-6 text-center'>"+
+                         "<p class='tno text-4xl font-bold'>" + totalava + "</p>" +
+                         "<p class='text-lg font-normal'> TOTAL BEDS </p>" +
+                         
+                         "</div>"+
+                     
+                     "</div>"+
+                     
+                 "</div>"+
+             "</div>"+
+         "</div>"+
+     "</div>"+
+ "</div>";
+                             
+                             
+                             document.getElementById("containHD").appendChild(bapdiv);
+                         }
+                     }
+
+         });
+
+     }
+
+     function UKD(dname){
+         fetch("https://api.covidbedsindia.in/v1/storages/608d542333382c01aecf8c95/Uttarakhand")
+         .then((resuk) => resuk.json())
+         .then((datauk) =>{
+             HosDetails.innerHTML = " ";
+                     for(var m=0; m < datauk.length; m++){
+                         if(datauk[m].DISTRICT == dname){
+                             console.log(datauk[m].HOSPITAL_NAME);
+                             var totalava = Number(datauk[m].BEDS_WITHOUT_OXYGEN_TOTAL) + Number(datauk[m].BEDS_WITH_OXYGEN_TOTAL) + Number(datauk[m].ICU_BEDS_TOTAL);
+                             var vacantava = Number(datauk[m].BEDS_WITHOUT_OXYGEN_AVAILABLE) + Number(datauk[m].BEDS_WITH_OXYGEN_AVAILABLE) + Number(datauk[m].ICU_BEDS_AVAILABLE);
+                             var bapdiv = document.createElement("div");
+                         bapdiv.innerHTML =
+                             "<div class='mb-2 mt-4'>"+
+     "<div class='max-w-md md:max-w-2xl px-2'>"+
+         "<div class='bg-white shadow-xl rounded-lg overflow-hidden md:flex'>"+
+             
+             "<div class='min-w-full'>"+
+                 "<div class='p-4 md:p-5'>"+
+                     "<p class='font-bold text-xl md:text-2xl'>"+ datauk[m].HOSPITAL_NAME +"</p>"+
+                     "<p class='text-gray-600 md:text-base'><i class='bx bxs-map'></i>  "+ datauk[m].DISTRICT + ", " + datauk[m].STEIN_ID +"</p>"+
+                     "<p class='phbtn text-gray-600 md:text-base  mb-3'><i class='bx bxs-phone'></i>  "+ datauk[m].NODAL_OFFICER_NUMBER +"</p> <br>"+
+                     "<span class='htype mt-2'><i class='bx bxs-first-aid' ></i>  CATEGORY: <b>"+ datauk[m].TYPE +"</b></span>"+
+                     "<a class='hdic px-2 py-0.5 md:px-2 float-right bg-indigo-700 hover:bg-indigo-600 rounded shadow-md text-white' href="+ datauk[m].LOCATION +" target=_blank rel=noopener noreferrer><i class='bx bxs-navigation'></i>  Direction</a>"+
+                 "</div>"+
+                 "<div class='p-4 md:p-5 bg-gray-200'>"+
+                   "<div class='row'>"+
+                         "<div class='col-6 text-center'>"+ 
+                             "<p class='text-green-400 text-4xl font-bold'>" + vacantava + "</p>" +
+                             "<p class='text-lg font-normal'> VACANT BEDS </p>" +
+                         
+                         
+                         "</div>"+
+                         "<div class='col-6 text-center'>"+
+                         "<p class='tno text-4xl font-bold'>" + totalava + "</p>" +
+                         "<p class='text-lg font-normal'> TOTAL BEDS </p>" +
+                         
+                         "</div>"+
+                     
+                     "</div>"+
+                     
+                 "</div>"+
+             "</div>"+
+         "</div>"+
+     "</div>"+
+ "</div>";
+                             
+                             
+                             document.getElementById("containHD").appendChild(bapdiv);
+                         }
+                     }
+
+         });
+
+     }
+
+
+
+
+
+ </script>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+   AOS.init({
+       offset: 150,
+       duration: 1000
+   });
+ </script>
+        <!--========== MAIN JS ==========-->
+        <script>
+            /*==================== SHOW NAVBAR ====================*/
+const showMenu = (headerToggle, navbarId) =>{
+    const toggleBtn = document.getElementById(headerToggle),
+    nav = document.getElementById(navbarId)
+    
+    // Validate that variables exist
+    if(headerToggle && navbarId){
+        toggleBtn.addEventListener('click', ()=>{
+            // We add the show-menu class to the div tag with the nav__menu class
+            nav.classList.toggle('show-menu')
+            // change icon
+            toggleBtn.classList.toggle('bx-x')
+        })
+    }
+}
+showMenu('header-toggle','navbar')
+
+/*==================== LINK ACTIVE ====================*/
+const linkColor = document.querySelectorAll('.nav__link')
+
+function colorLink(){
+    linkColor.forEach(l => l.classList.remove('active11'))
+    this.classList.add('active11')
+}
+
+linkColor.forEach(l => l.addEventListener('click', colorLink));
+
+        </script>
+    </body>
+</html>

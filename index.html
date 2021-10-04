@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <title>covid tracker</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <div class="content1" id="ggg">
+
+
+        <div class="loader">
+            <svg viewBox="0 0 32 32" width="42" height="42">
+                <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+            </svg>
+        </div>
+    </div>
+    <!--========== HEADER ==========-->
+    <header class="header">
+        <div class="header__container">
+            <img src="coa.png" alt="" class="header__img">
+
+            <a href="/" class="header__logo">#IndiaFightBack</a>
+            <!-- <p class="project-names">INDIACan</p> -->
+            <a href="#MAPDIV">
+                <div class="header__search">
+                    <input type="search" placeholder="Search" class="header__input">
+                    <i class='bx bx-search header__icon'></i>
+                </div>
+            </a>
+
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+        </div>
+    </header>
+
+    <!--========== NAV ==========-->
+    <div class="nav" id="navbar">
+        <nav class="nav__container">
+            <div>
+                <a href="#" class="nav__link nav__logo">
+                    <i class='bx bxs-virus-block nav__icon'></i>
+                    <span class="nav__logo-name">IndiaCan</span>
+                </a>
+
+                <div class="nav__list">
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle"></h3>
+                        <br>
+
+                        <a href="index.html" class="nav__link">
+                            <i class='bx bx-home nav__icon'></i>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
+
+
+                        <a href="map.html" class="nav__link">
+                            <i class='bx bx-map-alt nav__icon'></i>
+                            <span class="nav__name">Map</span>
+                        </a>
+
+
+                        <a href="register.html" class="nav__link">
+                            <i class='bx bx-building-house nav__icon'></i>
+                            <span class="nav__name">Hospital Beds</span>
+                        </a>
+                        <a href="findoxygen.html" class="nav__link">
+                            <i class='bx bx-cloud nav__icon'></i>
+                            <span class="nav__name">Oxygen Retailer</span>
+                        </a>
+                        <a href="team.html" class="nav__link">
+                            <i class='bx bxl-dev-to nav__icon'></i>
+                            <span class="nav__name">Team</span>
+                        </a>
+                        <a href="qrs.html" class="nav__link">
+                            <i class='bx bx-qr-scan nav__icon'></i>
+                            <span class="nav__name">Scan Certificate</span>
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <a href="/" class="nav__link nav__logout">
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Log Out</span>
+            </a>
+        </nav>
+    </div>
+
+    <!--========== CONTENTS ==========-->
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+
+                <h6 id="date">09 Aug, 7:04 PM IST </h6><i class='bx bx-time'> </i> <i class='bx bxs-bell'></i>
+                <h1>
+
+                </h1>
+                <div class="row">
+                    <div class="col-12">
+
+
+                        <div class="content">
+
+                            <div class="col-3">
+                                <a class="page" id="confirmed" tabindex="0">
+
+                                    <div class="box confirmeds nav-item first" active-color="rgba(255, 42, 0, 0.7)">
+                                        <p>Confirmed</p>
+                                        <h6 class="pluss">+ 4,906</h6>
+                                        <h3 id="tal">3,19,74,502</h3>
+
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-3">
+                                <a class="page" id="active" tabindex="0">
+
+                                    <div class="box actived nav-item second" active-color="rgba(0, 120, 248, 0.885)">
+                                        <p>Active</p>
+                                        <h6></h6>
+                                        <h3 id="pal">3,95,310</h3>
+
+                                    </div>
+                                </a>
+                            </div>
+
+
+                            <div class="col-3">
+                                <a class="page" id="recover" tabindex="0">
+
+                                    <div class="box recovereds nav-item third" active-color="rgba(18, 220, 0, 0.946)">
+                                        <p>Recovered</p>
+
+                                        <h6 class="pluss">+ 7150</h6>
+                                        <h3 id="mal">3,11,38,076</h3>
+
+
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-3">
+                                <a class="page" id="dieds" tabindex="0">
+
+                                    <div class="box deathss nav-item fourth" active-color="rgba(155, 155, 155, 0.939)">
+                                        <p>Deaths</p>
+                                        <h6 class="pluss">+ 140</h6>
+                                        <h3 id="kal">4,28,479</h3>
+
+                                    </div>
+                                </a>
+                            </div>
+
+
+
+                            <span class="nav-indicator"></span>
+                        </div>
+
+                    </div>
+                    <!-- {{!-- col-12 --}} -->
+
+                </div>
+                <!-- {{!-- row --}} -->
+
+                <!-- {{!-- <div class="col-12 charboxNumo"> --}} -->
+                <div class="col-12 charbox" data-aos="fade-up">
+                    <div class="card-head fw-bold mb-0">Covid-19 Statistics</div><select
+                        style="width: 120px; height: 30px; font-size: 13px; float: right; border: none; color: #787878; font-family: 'archiaregular';"
+                        id="selectoption" class="form-select doseselectbox" aria-label="Default select example">
+                        <option selected value="c">Confirmed</option>
+                        <option value="a">Active</option>
+                        <option value="r">Recovered</option>
+                        <option value="d">Deceased</option>
+                        <option value="t">PCR Tests</option>
+
+                    </select><br>
+                    <div class="" style="font-size: 10px; margin-bottom: -15px; float: left;"><i
+                            class='bx bx-stats'></i> New cases and deaths</div>
+
+                    <div id="myChart"> </div>
+
+                </div>
+                <!-- {{!-- </div> --}}
+                {{!-- <div class="vacdivs col-12 mt-3">
+                   
+                    <h5 id="vaccine"></h5>
+
+                </div> --}} -->
+                <div class="col-12 progbox mt-3" data-aos="fade-up" id="pgbar">
+
+                    <div class="card-head fw-bold" style="display: block;">Total Vaccination Percentage %</div>
+                    <div class="ddddsf" style="float: left; clear: left; width: 100%;">
+                        <div class="row">
+                            <div class="col-12">
+                                <span
+                                    style="float: left; font-family: 'archiaregular', sans-serif; color: #6c757d; font-size: 13px; margin-bottom: 4px;">At
+                                    least one dose</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                        role="progressbar" aria-valuenow="33.6" aria-valuemin="0" aria-valuemax="100"
+                                        id="progress1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ddddsf" style="float: left; clear: left; width: 100%; margin-top: 15px;">
+                        <div class="row">
+                            <div class="col-12">
+                                <span
+                                    style="float: left; font-family: 'archiaregular', sans-serif; color: #6c757d; font-size: 13px; margin-bottom: 4px;">Fully
+                                    vaccinated</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                        role="progressbar" aria-valuenow="33.6" aria-valuemin="0" aria-valuemax="100"
+                                        id="progress2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mt-2">
+                    <div class="left-div col-8 mt-3 float-left" data-aos="fade-up">
+                        <img class="mt-3 injectionsvg" src="injection.svg" alt="">
+                        <div class="mt-3 vacheading fw-bold" title="Total Number of doses administered till Date">Total
+                            Vaccination Doses <i class='bx bx-info-circle'></i></div>
+
+                        <h5 id="vaccine" class="tdosev">508,664,749</h5>
+                        <div class="row">
+                            <div class="col-6 mt-3">
+                                <div class="mt-1 dose1">Dose 1</div>
+                                <div class="fw-bolder dose1v" id="d1v">22,97,85,406</div>
+
+                            </div>
+                            <div class="col-6 mt-3">
+                                <div class="mt-1 dose2">Dose 2</div>
+                                <div class="fw-bolder dose2v" id="d2v">5,03,09,496</div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="right-div col-4 mt-3 float-right" data-aos="fade-up">
+                        <div class="rr-div fw-bold">Recovery Rate</div>
+
+                        <div class="progressbar" data-animate="false">
+                            <div class="circle" data-percent="10.1" id="recrate">
+                                <div></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 mt-3 tablemain" id="tgleswitch">
+                        <div class="row mt-3 mb-n5">
+                            <div class="col-6"></div>
+                            <!-- <div class="col-2"></div> -->
+                            <div class="col-2" style="margin-left: 20px;">
+                                <label class="form-check-label" for="flexSwitchCheckDefault" id="to">Total</label>
+                            </div>
+                            <div class="form-check form-switch col-2" style="margin-left: 1px; margin-right: 1px;">
+
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault" id="dai">Daily</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-1 tablemain" id="tablelist">
+                        <div class="row mt-1">
+                            <div class="col-4 theader" style="font-weight: 900; font-size: 15px; color: #000;">State/UT
+                            </div>
+                            <div class="col-2 con" style="color: #ff073a; font-weight: 900;">C</div>
+                            <div class="col-2 con" style="color: #007bff; font-weight: 900;">A</div>
+                            <div class="col-2 con" style="color: #28a745; font-weight: 900;">R</div>
+                            <div class="col-2 conD" style="color: #6c757d; font-weight: 900;">D</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fotter-lower mt-4">
+                    <p class="project-name">INDIACan</p>
+                    <p>We stand with everyone fighting on the frontlines</p>
+                    <span><a href="https://www.instagram.com/sourav.nayak_/ " target="_blank"
+                            rel="noopener noreferrer"><i class='bx bxl-instagram fotter-icon-insta'></i></a></span>
+                    <span><a href="http://https://github.com" target="_blank" rel="noopener noreferrer"><i
+                                class='bx bxl-github fotter-icon-github'></i></a></span>
+                    <span><a href="https://twitter.com/SouravN33667462" target="_blank" rel="noopener noreferrer"><i
+                                class='bx bxl-twitter fotter-icon-twitter'></a></i></span>
+                </div>
+            </div>
+        </div>
+        <!--========== CDN JS ==========-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.1/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"
+            integrity="sha512-NWNl2ZLgVBoi6lTcMsHgCQyrZVFnSmcaa3zRv0L3aoGXshwoxkGs3esa9zwQHsChGRL4aLDnJjJJeP6MjPX46Q=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script>
+            // {{!-- testtesttest --}}
+            "use strict";
+
+            var indicator = document.querySelector('.nav-indicator');
+            var items = document.querySelectorAll('.nav-item');
+
+            function handleIndicator(el) {
+                items.forEach(function (item) {
+                    item.classList.remove('is-active');
+                    item.removeAttribute('style');
+                });
+                indicator.style.width = "".concat(el.offsetWidth, "px");
+                indicator.style.left = "".concat(el.offsetLeft, "px");
+                indicator.style.backgroundColor = el.getAttribute('active-color');
+                el.classList.add('is-active');
+                el.style.color = el.getAttribute('active-color');
+            }
+
+            items.forEach(function (item, index) {
+                item.addEventListener('click', function (e) {
+                    handleIndicator(e.target);
+                });
+                item.classList.contains('is-active') && handleIndicator(item);
+            });
+
+            $(document).ready(function ($) {
+                function animateElements() {
+                    $('.progressbar').each(function () {
+                        var elementPos = $(this).offset().top;
+                        var topOfWindow = $(window).scrollTop();
+                        var percent = $(this).find('.circle').attr('data-percent');
+                        var percentage = parseInt(percent, 10) / parseInt(100, 10);
+                        var animate = $(this).data('animate');
+                        if (elementPos < topOfWindow + $(window).height() - 30 && !animate) {
+                            $(this).data('animate', true);
+                            $(this).find('.circle').circleProgress({
+                                startAngle: -Math.PI / 2,
+                                value: percent / 100,
+                                size: 180,
+                                thickness: 20,
+                                emptyFill: "rgb(208, 208, 208)",
+                                fill: {
+                                    color: 'rgba(43, 255, 5, 0.35)'
+                                },
+                                animation: {
+                                    duration: 2600
+                                }
+                            }).on('circle-animation-progress', function (event, progress, stepValue) {
+                                $(this).find('div').text((stepValue * 100).toFixed(1) + "%");
+                            }).stop();
+                        }
+                        if (elementPos < topOfWindow + $(window).height() - 30 && $(window).width() < 767 && !animate) {
+                            $(this).data('animate', true);
+                            $(this).find('.circle').circleProgress({
+                                startAngle: -Math.PI / 2,
+                                value: percent / 100,
+                                size: 180,
+                                thickness: 10,
+                                emptyFill: "rgb(208, 208, 208)",
+                                fill: {
+                                    color: 'rgba(43, 255, 5, 0.35)'
+                                },
+                                animation: {
+                                    duration: 2600
+                                }
+                            }).on('circle-animation-progress', function (event, progress, stepValue) {
+                                $(this).find('div').text((stepValue * 100).toFixed(1) + "%");
+                            }).stop();
+                        }
+                    });
+                }
+
+                // Show animated elements
+                animateElements();
+                $(window).scroll(animateElements);
+            }); //end document ready function
+            const countries = document.querySelector('datalist');
+            const date = document.querySelector('#date');
+            const confirmeds = document.querySelector('.confirmeds');
+            const actived = document.querySelector('.actived');
+            const recovereds = document.querySelector('.recovereds');
+            const deathss = document.querySelector('.deathss');
+            //const chart = document.querySelector('.chart');
+            const myChart = document.querySelector('myChart');
+            const vacdiv = document.querySelector('#vaccine');
+            const d1value = document.getElementById("d1v");
+            const d2value = document.getElementById("d2v");
+            //const dssa = document.querySelector('.page');
+
+            //  CHARTAPEX START
+            const dates = [];
+            const confirmedcases = [];
+            var options = {
+                chart: {
+                    type: "area",
+
+                    height: 300,
+                    zoom: {
+                        type: "x",
+                        enabled: true
+                    },
+                    toolbar: {
+                        show: false,
+                    },
+
+                },
+                responsive: [{
+                    breakpoint: 768,
+                    options: {
+                        chart: {
+                            height: 200,
+                        }
+                    },
+                }],
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    width: 3
+                    , curve: 'smooth'  //(smooth , straight , stepline)
+                },
+                noData: {
+                    text: 'Loading Please Wait....'
+                },
+                series: [{
+                    name: 'Cases',
+                    data: confirmedcases
+                }],
+                fill: {
+                    type: "gradient",
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.7,
+                        opacityTo: 0.9,
+                        stops: [0, 90, 100]
+                    }
+                },
+                xaxis: {
+                    categories: dates,
+                    //tickAmount: 10,
+                    tickPlacement: 'on',
+
+                    labels: {
+                        show: true,
+                        hideOverlappingLabels: true,
+                        rotate: 0,
+
+                        style: {
+
+                            fontSize: '12px',
+                            fontFamily: 'archiaregular',
+                            fontWeight: 500,
+                            cssClass: 'apexcharts-xaxis-label',
+                            margin: 100,
+                        },
+
+
+                    },
+                    offsetX: 10,
+                    axisTicks: {
+
+                        offsetX: 1000,
+
+                    },
+                },
+                yaxis: {
+                    show: false,
+                }
+            }
+
+            var chart = new ApexCharts(document.querySelector("#myChart"), options);
+            chart.render();
+            // *****--------CHARTENDS----------*****  
+
+            function loader() {
+                $('#ggg').hide();
+            }
+            window.onload = loader;
+            function timeseries() {
+                fetch('https://data.covid19india.org/v4/min/timeseries.min.json')
+                    .then(e => { return e.json(); })
+                    .then(dataTS => {
+                        console.log(dataTS);
+
+                        const activecases = [];
+                        const recovercases = [];
+                        const deathcases = [];
+                        const othercases = [];
+                        const dailytested = [];
+
+                        const propertyNames = Object.keys(dataTS["TT"].dates);
+                        const last365 = propertyNames.slice(Math.max(propertyNames.length - 365, 1));
+
+                        for (const val of last365) {
+
+                            // CONFIRED CASES
+                            if ("confirmed" in dataTS["TT"].dates[val].delta) {
+
+                                confirmedcases.push(dataTS["TT"].dates[val].delta.confirmed);
+
+
+                            } else {
+
+                                confirmedcases.push(0);
+
+                            }
+
+                            // DeathCases
+                            if ("deceased" in dataTS["TT"].dates[val].delta) {
+
+                                deathcases.push(dataTS["TT"].dates[val].delta.deceased);
+
+
+                            } else {
+
+                                deathcases.push(0);
+
+                            }
+
+                            //RECOVER
+                            if ("recovered" in dataTS["TT"].dates[val].delta) {
+
+                                recovercases.push(dataTS["TT"].dates[val].delta.recovered);
+
+
+                            } else {
+
+                                recovercases.push(0);
+
+                            }
+                            //Other Cases
+                            if ("other" in dataTS["TT"].dates[val].delta) {
+
+                                othercases.push(dataTS["TT"].dates[val].delta.other);
+
+
+                            } else {
+
+                                othercases.push(0);
+
+                            }
+
+                            //TESTED
+                            if ("tested" in dataTS["TT"].dates[val].delta) {
+                                dailytested.push(dataTS["TT"].dates[val].delta.tested);
+
+                            } else {
+
+                                dailytested.push(0);
+
+                            }
+
+                            //Active cases
+                            // for (const inner of confirmedcases) {
+                            activecases.push(dataTS["TT"].dates[val].delta.confirmed - (dataTS["TT"].dates[val].delta.recovered + dataTS["TT"].dates[val].delta.deceased));
+                        }
+
+                        for (let index = 0; index < last365.length; ++index) {
+                            //console.log(pio[index]);
+                            var five_date = last365[index];
+                            var dd_five_date = five_date.substring(0, 10);
+
+
+                            function formatDate(d) {
+                                var date = new Date(d);
+
+                                if (isNaN(date.getTime())) {
+                                    return d;
+                                }
+                                else {
+
+                                    var month = new Array();
+                                    month[0] = "Jan";
+                                    month[1] = "Feb";
+                                    month[2] = "Mar";
+                                    month[3] = "Apr";
+                                    month[4] = "May";
+                                    month[5] = "Jun";
+                                    month[6] = "Jul";
+                                    month[7] = "Aug";
+                                    month[8] = "Sept";
+                                    month[9] = "Oct";
+                                    month[10] = "Nov";
+                                    month[11] = "Dec";
+
+                                    var day = date.getDate();
+
+                                    if (day < 10) {
+                                        day = "0" + day;
+                                    }
+
+                                    return day + " " + month[date.getMonth()] + " " + date.getFullYear();
+                                }
+
+                            }
+                            var date_response = formatDate(dd_five_date);
+                            dates.push(date_response.substring(0, 6));
+
+
+                        }
+
+                        console.log(dates);
+
+
+                        chart.updateSeries([{
+                            name: 'Confirmed Cases',
+                            data: confirmedcases
+
+                        }]);
+
+                        chart.updateOptions({
+                            xaxis: {
+                                categories: dates,
+                                tickAmount: 3,
+                                offsetX: 5,
+                                tickPlacement: 'on',
+
+
+                            },
+                            fill: {
+                                colors: ['#ff073a']
+                            },
+                            colors: ['#ff073a']
+                        });
+                        document.getElementById('selectoption').addEventListener("change", function () {
+                            if (document.getElementById('selectoption').value == "c") {
+
+                                chart.updateSeries([{
+                                    name: 'Confirmed Cases',
+                                    data: confirmedcases,
+
+                                }]);
+
+                                chart.updateOptions({
+                                    animate: true,
+                                    xaxis: {
+                                        categories: dates,
+                                        tickAmount: 3,
+                                        offsetX: 5,
+                                        tickPlacement: 'on',
+                                    },
+
+                                    fill: {
+                                        colors: ['#ff073a']
+                                    },
+                                    colors: ['#ff073a']
+                                });
+                            }
+
+
+                        });
+
+
+                        document.getElementById('selectoption').addEventListener("change", function () {
+                            if (document.getElementById('selectoption').value == "a") {
+
+                                chart.updateSeries([{
+                                    name: 'Active Cases',
+                                    data: activecases,
+
+                                }]);
+
+                                chart.updateOptions({
+                                    animate: true,
+                                    xaxis: {
+                                        categories: dates,
+                                        tickAmount: 3,
+                                        offsetX: 5,
+                                        tickPlacement: 'on',
+                                    },
+                                    fill: {
+                                        colors: ['#007bff']
+                                    },
+
+                                    colors: ['#007bff']
+                                });
+                            }
+
+
+                        });
+
+
+                        document.getElementById('selectoption').addEventListener("change", function () {
+                            if (document.getElementById('selectoption').value == "r") {
+
+                                chart.updateSeries([{
+                                    name: 'Recovered Cases',
+                                    data: recovercases
+                                }]);
+
+                                chart.updateOptions({
+                                    animate: true,
+                                    xaxis: {
+                                        categories: dates,
+                                        tickAmount: 3,
+                                        offsetX: 5,
+                                        tickPlacement: 'on',
+                                    },
+                                    fill: {
+                                        colors: ['#28a745']
+                                    },
+                                    colors: ['#28a745']
+                                });
+                            } else if (document.getElementById('selectoption').value == "d") {
+                                chart.updateSeries([{
+                                    name: 'Deceased Cases',
+                                    data: deathcases
+                                }]);
+
+                                chart.updateOptions({
+                                    animate: true,
+                                    xaxis: {
+                                        categories: dates,
+                                        tickAmount: 3,
+                                        offsetX: 5,
+                                        tickPlacement: 'on',
+
+
+                                    },
+
+                                    fill: {
+                                        colors: ['#6c757d']
+                                    },
+                                    colors: ['#6c757d']
+                                });
+                            }
+
+
+                        });
+
+                        document.getElementById('selectoption').addEventListener("change", function () {
+                            if (document.getElementById('selectoption').value == "t") {
+
+                                chart.updateSeries([{
+                                    name: 'RT-PCR Tests',
+                                    data: dailytested,
+
+                                }]);
+
+                                chart.updateOptions({
+                                    animate: true,
+                                    xaxis: {
+                                        categories: dates,
+                                        tickAmount: 3,
+                                        offsetX: 5,
+                                        tickPlacement: 'on',
+                                    },
+                                    fill: {
+                                        colors: ['rgba(32,26,162,.8666666666666667)']
+                                    },
+
+                                    colors: ['rgba(32,26,162,.8666666666666667)']
+                                });
+                            }
+
+                        });
+
+
+                        console.log(dailytested);
+                        //console.log(last365);
+                        //console.log(confirmedcases);
+
+                    });
+            }
+
+            function trytest() {
+                $('#ggg').show();
+                fetch('https://data.covid19india.org/v4/min/data.min.json')
+
+                    .then(e => { return e.json(); })
+                    .then(data => {
+                        $('#ggg').hide();
+                        console.log(data);
+                        //console.log(data["TT"].total.confirmed - (data["TT"].total.recovered + data["TT"].total.deceased + data["TT"].total.other));
+                        var confirmed_cases = data["TT"].total.confirmed;
+                        var recovered_cases = data["TT"].total.recovered;
+                        var recovery_rate = confirmed_cases / recovered_cases * 100;
+                        console.log(recovery_rate);
+                        document.getElementById("recrate").setAttribute("data-percent", recovery_rate);
+
+                        document.getElementById("to").style.color = "black";
+                        document.getElementById("to").style.fontWeight = "700";
+                        var okarray = [];
+                        var c = [];
+                        var a = [];
+                        var r = [];
+                        var d = [];
+                        var statearray = [
+                            {
+                                "abbreviation": "AN",
+                                "name": "Andaman & Nicobar Islands"
+                            },
+                            {
+                                "abbreviation": "AP",
+                                "name": "Andhra Pradesh"
+                            },
+                            {
+                                "abbreviation": "AR",
+                                "name": "Arunachal Pradesh"
+                            },
+                            {
+                                "abbreviation": "AS",
+                                "name": "Assam"
+                            },
+                            {
+                                "abbreviation": "BR",
+                                "name": "Bihar"
+                            },
+                            {
+                                "abbreviation": "CH",
+                                "name": "Chandigarh"
+                            },
+                            {
+                                "abbreviation": "CT",
+                                "name": "Chhattisgarh"
+                            },
+                            {
+                                "abbreviation": "DN",
+                                "name": "Dadra & Nagar Haveli"
+                            },
+                            {
+                                "abbreviation": "DD",
+                                "name": "Daman & Diu"
+                            },
+                            {
+                                "abbreviation": "DL",
+                                "name": "Delhi"
+                            },
+                            {
+                                "abbreviation": "GA",
+                                "name": "Goa"
+                            },
+                            {
+                                "abbreviation": "GJ",
+                                "name": "Gujarat"
+                            },
+                            {
+                                "abbreviation": "HR",
+                                "name": "Haryana"
+                            },
+                            {
+                                "abbreviation": "HP",
+                                "name": "Himachal Pradesh"
+                            },
+                            {
+                                "abbreviation": "JK",
+                                "name": "Jammu & Kashmir"
+                            },
+                            {
+                                "abbreviation": "JH",
+                                "name": "Jharkhand"
+                            },
+                            {
+                                "abbreviation": "KA",
+                                "name": "Karnataka"
+                            },
+                            {
+                                "abbreviation": "KL",
+                                "name": "Kerala"
+                            },
+                            {
+                                "abbreviation": "LD",
+                                "name": "Lakshadweep"
+                            },
+                            {
+                                "abbreviation": "MP",
+                                "name": "Madhya Pradesh"
+                            },
+                            {
+                                "abbreviation": "MH",
+                                "name": "Maharashtra"
+                            },
+                            {
+                                "abbreviation": "MN",
+                                "name": "Manipur"
+                            },
+                            {
+                                "abbreviation": "ML",
+                                "name": "Meghalaya"
+                            },
+                            {
+                                "abbreviation": "MZ",
+                                "name": "Mizoram"
+                            },
+                            {
+                                "abbreviation": "NL",
+                                "name": "Nagaland"
+                            },
+                            {
+                                "abbreviation": "OR",
+                                "name": "Odisha"
+                            },
+                            {
+                                "abbreviation": "PY",
+                                "name": "Puducherry"
+                            },
+                            {
+                                "abbreviation": "PB",
+                                "name": "Punjab"
+                            },
+                            {
+                                "abbreviation": "RJ",
+                                "name": "Rajasthan"
+                            },
+                            {
+                                "abbreviation": "SK",
+                                "name": "Sikkim"
+                            },
+                            {
+                                "abbreviation": "TN",
+                                "name": "Tamil Nadu"
+                            },
+                            {
+                                "abbreviation": "TG",
+                                "name": "Telangana"
+                            },
+                            {
+                                "abbreviation": "TR",
+                                "name": "Tripura"
+                            },
+                            {
+                                "abbreviation": "UP",
+                                "name": "Uttar Pradesh"
+                            },
+                            {
+                                "abbreviation": "UT",
+                                "name": "Uttarakhand"
+                            },
+                            {
+                                "abbreviation": "LA",
+                                "name": "Ladakh"
+                            },
+                            {
+                                "abbreviation": "TT",
+                                "name": "INDIA"
+                            },
+                            {
+                                "abbreviation": "WB",
+                                "name": "West Bengal"
+                            }
+                        ]
+                        // var isChecked = document.getElementById("flexSwitchCheckDefault").checked;
+                        for (var ok in data) {
+                            //console.log(ok);
+
+                            okarray.push(ok);
+                            c.push(data[ok].total.confirmed)
+                            r.push(data[ok].total.recovered)
+                            d.push(data[ok].total.deceased)
+                            a.push((data[ok].total.confirmed) - (data[ok].total.recovered + data[ok].total.deceased))
+
+
+                        }
+                        var x = window.matchMedia("(max-width: 700px)")
+                        if (x.matches) {
+                            for (var everyarray in c) {
+                                function nFormatter(num) {
+                                    if (num >= 1000000000) {
+                                        return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+                                    }
+                                    if (num >= 1000000) {
+                                        return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+                                    }
+                                    if (num >= 1000) {
+                                        return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+                                    }
+                                    return num;
+                                }
+
+                                var tatac = nFormatter(c[everyarray]);
+                                var tataa = nFormatter(a[everyarray]);
+                                var tatar = nFormatter(r[everyarray]);
+                                var tatad = nFormatter(d[everyarray]);
+                                c[everyarray] = tatac;
+                                a[everyarray] = tataa;
+                                r[everyarray] = tatar;
+                                d[everyarray] = tatad;
+
+                            }
+                        }
+                        console.log(c);
+                        for (var is in okarray) {
+                            for (var state_is in statearray) {
+                                if (okarray[is] == statearray[state_is].abbreviation) {
+                                    okarray[is] = statearray[state_is].name;
+                                }
+
+                            }
+
+                        }
+                        document.getElementById('flexSwitchCheckDefault').addEventListener('change', function () {
+                            if (document.getElementById('flexSwitchCheckDefault').checked) {
+                                fetch('https://data.covid19india.org/v4/min/data.min.json')
+                                    .then(e => { return e.json(); })
+                                    .then(data_delta => {
+                                        var valuo = 0;
+                                        for (var okok in data_delta) {
+
+                                            if ("delta" in data_delta[okok]) {
+
+                                                if ("confirmed" in data_delta[okok].delta) {
+                                                    c[valuo] = "↑ " + data_delta[okok].delta.confirmed;
+                                                } else {
+                                                    c[valuo] = "-";
+                                                }
+
+                                                if ("recovered" in data_delta[okok].delta) {
+                                                    r[valuo] = "↑ " + data_delta[okok].delta.recovered;
+                                                } else {
+                                                    r[valuo] = "-";
+                                                }
+
+                                                if ("deceased" in data_delta[okok].delta) {
+                                                    d[valuo] = data_delta[okok].delta.deceased;
+                                                }
+                                                else {
+                                                    d[valuo] = "-";
+                                                }
+                                                var neg_active = 0;
+                                                neg_active = (data_delta[okok].delta.confirmed) - (data_delta[okok].delta.recovered + data_delta[okok].delta.deceased);
+
+                                                if (Number.isNaN(neg_active)) {
+                                                    a[valuo] = "-";
+                                                } else {
+                                                    if (neg_active >= 0) {
+                                                        a[valuo] = "↑ " + neg_active;
+                                                    } else {
+                                                        a[valuo] = "↓ " + Math.abs(neg_active);
+                                                    }
+                                                }
+
+                                            } else {
+                                                c[valuo] = "-";
+                                                r[valuo] = "-";
+                                                d[valuo] = "-";
+                                                a[valuo] = "-";
+                                            }
+                                            valuo = valuo + 1;
+
+
+                                        }
+
+                                        console.log(r);
+                                        document.getElementById("tablelist").innerHTML = " ";
+                                        var tablehead = document.createElement("div");
+                                        tablehead.innerHTML =
+                                            "<div class='row mt-2' id='eachrow1'>" +
+                                            "<div class='col-4 theader' style='font-weight: 900; font-size: 15px; color: #000;'>State/UT</div>" +
+                                            "<div class='col-2 con' style='color: #ff073a; font-weight: 900;'>C</div>" +
+                                            "<div class='col-2 con' style='color: #007bff; font-weight: 900;'>A</div>" +
+                                            "<div class='col-2 con' style='color: #28a745; font-weight: 900;'>R</div>" +
+                                            "<div class='col-2 conD' style='color: #6c757d; font-weight: 900;'>D</div>" +
+                                            "</div>";
+                                        document.getElementById("tablelist").appendChild(tablehead);
+
+
+                                        for (var yo in okarray) {
+
+                                            var tablelist = document.createElement("div");
+                                            tablelist.innerHTML =
+                                                "<div class='row mt-2' id='eachrow1'>" +
+                                                "<div class='col-4 theader'>" + okarray[yo] + "</div>" +
+                                                "<div class='col-2 con'>" + c[yo] + "</div>" +
+                                                "<div class='col-2 con'>" + a[yo] + "</div>" +
+                                                "<div class='col-2 con'>" + r[yo] + "</div>" +
+                                                "<div class='col-2 conD'>" + d[yo] + "</div>" +
+                                                "</div>";
+                                            document.getElementById("tablelist").appendChild(tablelist);
+                                        }
+                                        document.getElementById("dai").style.color = "black";
+                                        document.getElementById("dai").style.fontWeight = "700";
+                                        document.getElementById("to").style.color = "#58555e";
+                                        document.getElementById("to").style.fontWeight = "normal";
+
+                                    });
+
+
+                            } if (document.getElementById('flexSwitchCheckDefault').checked == false) {
+                                console.log("NOT CHECKED");
+                                fetch('https://data.covid19india.org/v4/min/data.min.json')
+                                    .then(e => { return e.json(); })
+                                    .then(data_delta => {
+                                        var valuo = 0;
+                                        for (var okok in data_delta) {
+
+
+                                            c[valuo] = data_delta[okok].total.confirmed;
+
+                                            r[valuo] = data_delta[okok].total.recovered;
+                                            d[valuo] = data_delta[okok].total.deceased;
+                                            a[valuo] = (data_delta[okok].total.confirmed) - (data_delta[okok].total.recovered + data_delta[okok].total.deceased)
+
+                                            valuo = valuo + 1;
+                                        }
+                                        var x = window.matchMedia("(max-width: 700px)")
+                                        if (x.matches) {
+                                            for (var everyarray in c) {
+                                                function nFormatter(num) {
+                                                    if (num >= 1000000000) {
+                                                        return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+                                                    }
+                                                    if (num >= 1000000) {
+                                                        return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+                                                    }
+                                                    if (num >= 1000) {
+                                                        return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+                                                    }
+                                                    return num;
+                                                }
+
+                                                var tatac = nFormatter(c[everyarray]);
+                                                var tataa = nFormatter(a[everyarray]);
+                                                var tatar = nFormatter(r[everyarray]);
+                                                var tatad = nFormatter(d[everyarray]);
+                                                c[everyarray] = tatac;
+                                                a[everyarray] = tataa;
+                                                r[everyarray] = tatar;
+                                                d[everyarray] = tatad;
+
+                                            }
+                                        }
+
+                                        console.log(r);
+                                        document.getElementById("tablelist").innerHTML = " ";
+                                        var tablehead = document.createElement("div");
+                                        tablehead.innerHTML =
+                                            "<div class='row mt-2' id='eachrow1'>" +
+                                            "<div class='col-4 theader' style='font-weight: 900; font-size: 15px; color: #000;'>State/UT</div>" +
+                                            "<div class='col-2 con' style='color: #ff073a; font-weight: 900;'>C</div>" +
+                                            "<div class='col-2 con' style='color: #007bff; font-weight: 900;'>A</div>" +
+                                            "<div class='col-2 con' style='color: #28a745; font-weight: 900;'>R</div>" +
+                                            "<div class='col-2 conD' style='color: #6c757d; font-weight: 900;'>D</div>" +
+                                            "</div>";
+                                        document.getElementById("tablelist").appendChild(tablehead);
+
+
+                                        for (var yo in okarray) {
+
+                                            var tablelist = document.createElement("div");
+                                            tablelist.innerHTML =
+                                                "<div class='row mt-2' id='eachrow1'>" +
+                                                "<div class='col-4 theader'>" + okarray[yo] + "</div>" +
+                                                "<div class='col-2 con'>" + c[yo] + "</div>" +
+                                                "<div class='col-2 con'>" + a[yo] + "</div>" +
+                                                "<div class='col-2 con'>" + r[yo] + "</div>" +
+                                                "<div class='col-2 conD'>" + d[yo] + "</div>" +
+                                                "</div>";
+                                            document.getElementById("tablelist").appendChild(tablelist);
+                                        }
+
+                                    });
+                                document.getElementById("to").style.color = "black";
+                                document.getElementById("to").style.fontWeight = "700";
+                                document.getElementById("dai").style.color = "#58555e";
+                                document.getElementById("dai").style.fontWeight = "normal";
+
+                            }
+                        });
+                        // console.log(okarray);
+                        // console.log(a);
+                        for (var yo in okarray) {
+                            var tablelist = document.createElement("div");
+                            tablelist.innerHTML =
+                                "<div class='row mt-2' id='eachrow'>" +
+                                "<div class='col-4 theader'>" + okarray[yo] + "</div>" +
+                                "<div class='col-2 con'>" + c[yo] + "</div>" +
+                                "<div class='col-2 con'>" + a[yo] + "</div>" +
+                                "<div class='col-2 con'>" + r[yo] + "</div>" +
+                                "<div class='col-2 conD'>" + d[yo] + "</div>" +
+                                "</div>";
+                            document.getElementById("tablelist").appendChild(tablelist);
+                        }
+
+
+                        //console.log(statearray[5].abbreviation);
+
+                        var last_time = data["TT"].meta.last_updated;
+                        var dateString = last_time.substring(0, 10);
+                        var timeos = last_time.substring(11, 19);
+                        var date_response;
+
+                        function formatDate(d) {
+                            var date = new Date(d);
+                            var day;
+
+
+                            if (isNaN(date.getTime())) {
+                                return d;
+                            }
+                            else {
+
+                                var month = new Array();
+                                month[0] = "Jan";
+                                month[1] = "Feb";
+                                month[2] = "Mar";
+                                month[3] = "Apr";
+                                month[4] = "May";
+                                month[5] = "Jun";
+                                month[6] = "Jul";
+                                month[7] = "Aug";
+                                month[8] = "Sept";
+                                month[9] = "Oct";
+                                month[10] = "Nov";
+                                month[11] = "Dec";
+
+                                day = date.getDate();
+
+                                if (day < 10) {
+                                    day = "0" + day;
+                                }
+
+                                return day + " " + month[date.getMonth()] + " " + date.getFullYear();
+                            }
+
+                        }
+                        date_response = formatDate(dateString);
+                        console.log(date_response);
+
+                        date.textContent = date_response + " " + timeos + " " + "IST";
+                        // for (var i in data){
+                        //     console.log(data[i].)
+                        // }
+                        function numberWithCommas(n) {
+                            var parts = n.toString().split(".");
+                            return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        }
+
+                        var counter = { var: 0, var1: 0, var2: 0, var3: 0 };
+                        var tal = document.getElementById("tal");
+                        var pal = document.getElementById("pal");
+                        var mal = document.getElementById("mal");
+                        var kal = document.getElementById("kal");
+
+                        TweenMax.to(counter, 1, {
+                            var: data["TT"].total.confirmed,
+                            var1: (data["TT"].total.confirmed - (data["TT"].total.recovered + data["TT"].total.deceased + data["TT"].total.other)),
+                            var2: data["TT"].total.recovered,
+                            var3: data["TT"].total.deceased,
+                            onUpdate: function () {
+                                var nwc = numberWithCommas(counter.var);
+                                tal.innerHTML = nwc;
+                                var nwc1 = numberWithCommas(counter.var1);
+                                pal.innerHTML = nwc1;
+                                var nwc2 = numberWithCommas(counter.var2);
+                                mal.innerHTML = nwc2;
+                                var nwc3 = numberWithCommas(counter.var3);
+                                kal.innerHTML = nwc3;
+                            },
+                            ease: Circ.easeOut,
+                            delay: 1.0
+                        });
+                        if ("delta" in data["TT"]) {
+
+                            confirmeds.children[1].textContent = "+ " + data["TT"].delta.confirmed;
+                            recovereds.children[1].textContent = "+ " + data["TT"].delta.recovered;
+                            deathss.children[1].textContent = "+ " + data["TT"].delta.deceased;
+                        } else {
+                            confirmeds.children[1].textContent = "+ 0";
+                            recovereds.children[1].textContent = "+ 0";
+                            deathss.children[1].textContent = "+ 0";
+                        }
+
+                        vacdiv.innerHTML = new Intl.NumberFormat().format((data["TT"].total.vaccinated1 + data["TT"].total.vaccinated2));
+                        d1value.innerHTML = new Intl.NumberFormat().format(data["TT"].total.vaccinated1);
+                        d2value.innerHTML = new Intl.NumberFormat().format(data["TT"].total.vaccinated2);
+
+                        var population = data["TT"].meta.population;
+                        console.log(population);
+                        var v1 = data["TT"].total.vaccinated1;
+                        var vt = data["TT"].total.vaccinated2;
+                        var percentage_d1 = (v1 / population) * 100;
+                        var percentage_d1_round = Math.round(percentage_d1);
+                        console.log(percentage_d1_round);
+
+
+                        var percentage_total = (vt / population) * 100;
+                        var percentage_d2_round = Math.round(percentage_total);
+
+
+                        document.getElementById("progress1").setAttribute("aria-valuenow", percentage_d1_round);
+                        document.getElementById("progress1").innerHTML = percentage_d1_round;
+                        document.getElementById("progress2").setAttribute("aria-valuenow", percentage_d2_round);
+                        document.getElementById("progress2").innerHTML = percentage_d2_round;
+                        var delay = 2000;
+
+                        $(".progress-bar").each(function (i) {
+                            $(this).delay(delay * i).animate({ width: $(this).attr('aria-valuenow') + '%' }, delay);
+
+                            $(this).prop('Counter', 0).animate({
+                                Counter: $(this).text()
+                            }, {
+                                duration: delay,
+                                easing: 'swing',
+                                step: function (now) {
+                                    $(this).text(Math.ceil(now) + '%');
+                                }
+                            });
+                        });
+                    });
+            }
+            trytest();
+            setTimeout(function () { timeseries(); }, 3000);
+            let dataChart = [];
+            const API_URL = "https://data.covid19india.org/data.json "
+
+            async function covid() {
+                const res = await fetch(API_URL);
+
+                const data = await res.json();
+                console.log(data)
+
+                const time = []
+                const allconfirmed = []
+
+                const allrec = []
+                const alldied = []
+
+                const tconfirm = []
+                const trec = []
+                const tdead = []
+
+                const allactive = []
+                const activetime = []
+
+                $.each(data.cases_time_series.slice(100), function (id, obj) {
+                    time.push(obj.date)
+                    allconfirmed.push(obj.dailyconfirmed)
+                    allrec.push(obj.dailyrecovered)
+                    alldied.push(obj.dailydeceased)
+
+                    tconfirm.push(obj.totalconfirmed)
+                    trec.push(obj.totalrecovered)
+                    tdead.push(obj.totaldeceased)
+                })
+
+
+
+                var dt = [];
+                for (let k = 0; k < time.length; k++) {
+
+                    dt.push()
+                }
+
+
+                var C = [];
+                for (let i = 0; i < tconfirm.length; i++) {
+                    C.push(Math.abs(tconfirm[i] - trec[i]));
+                }
+
+                var act = [];
+                for (let j = 0; j < C.length; j++) {
+                    act.push(Math.abs(C[j] - tdead[j]));
+                }
+                //END PERFORM TEST
+                $.each(data.statewise.slice(0), function (id1, obj1) {
+                    allactive.push(obj1.active)
+
+
+                })
+
+
+
+                if (res.status === 4 || res.status === 200) {
+                    var dateString = data.statewise[0].lastupdatedtime;
+                    var dateParts = dateString.split("/");
+                    var dateObject = new Date(dateParts[1] + "/" + dateParts[0] + "/" + dateParts[2]);
+                    var sldate = (dateObject).toString();
+                    //date.textContent = sldate.slice(0,25) + " " + "IST";
+
+                    //vacine
+
+                    var vac = data.tested.length;
+                    var varlen = vac - 1;
+                    var vacdose = data.tested[varlen].totaldosesadministered;
+                    var vacdosefirstdose = data.tested[varlen].firstdoseadministered;
+                    var vacdoseseconddose = data.tested[varlen].seconddoseadministered;
+                    // console.log(vacdosefirstdose);
+
+                    const { active, confirmed, deaths, recovered, deltaconfirmed, deltadeaths, deltarecovered } = data.statewise[0];
+                    //confirmeds.children[2].textContent = "218,4598";
+
+                    //confirmeds.children[2].innerHTML = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(confirmed);
+                    var dconfirmedsecond = new Intl.NumberFormat().format(deltaconfirmed);
+
+                    //confirmeds.children[1].textContent = "+ " + dconfirmedsecond;
+
+                    //actived.children[2].textContent = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(active);
+                    //recovereds.children[2].textContent = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(recovered);
+                    var drecoversecond = new Intl.NumberFormat().format(deltarecovered);
+
+                    //recovereds.children[1].textContent = "+ " + drecoversecond;
+
+                    // deathss.children[2].textContent = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(deaths);
+                    var ddeathssecond = new Intl.NumberFormat().format(deltadeaths);
+
+                } else {
+                    chart.innerHTML = '<h2>Loading......</h2>';
+                }
+
+            }
+            covid();
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- {{!-- aos --}} -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                offset: 150,
+                duration: 1000
+            });
+        </script>
+
+        <!--========== MAIN JS ==========-->
+        <script>
+            /*==================== SHOW NAVBAR ====================*/
+            const showMenu = (headerToggle, navbarId) => {
+                const toggleBtn = document.getElementById(headerToggle),
+                    nav = document.getElementById(navbarId)
+
+                // Validate that variables exist
+                if (headerToggle && navbarId) {
+                    toggleBtn.addEventListener('click', () => {
+                        // We add the show-menu class to the div tag with the nav__menu class
+                        nav.classList.toggle('show-menu')
+                        // change icon
+                        toggleBtn.classList.toggle('bx-x')
+                    })
+                }
+            }
+            showMenu('header-toggle', 'navbar')
+
+            /*==================== LINK ACTIVE ====================*/
+            const linkColor = document.querySelectorAll('.nav__link')
+
+            function colorLink() {
+                linkColor.forEach(l => l.classList.remove('active11'))
+                this.classList.add('active11')
+            }
+
+            linkColor.forEach(l => l.addEventListener('click', colorLink));
+
+        </script>
+</body>
+
+</html>

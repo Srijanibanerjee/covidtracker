@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.1/tailwind.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="navbar.css">
+
+        <title>oxygen </title>
+        <style>
+            .oxy_section{
+                max-width: 700px;
+                margin: 50px auto;
+                position: relative;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                background-color: rgba(255, 255, 255, 0.974);
+                border-radius: 6px;
+                margin-bottom: 0;
+                margin-top: 12px;
+            }
+    
+            .oxy_section2{
+                max-width: 700px;
+                margin: 50px auto;
+                position: relative;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                background-color: rgba(255, 255, 255, 0.974);
+                border-radius: 6px;
+                margin-bottom: 0;
+                margin-top: 12px;
+                visibility: hidden;
+    
+            }
+    
+    
+    
+    
+            .card {
+        border: none;
+        border-radius: 10px
+    }
+    
+    .c-details span {
+        font-weight: 300;
+        font-size: 13px
+    }
+    
+    .icon {
+        width: 50px;
+        height: 50px;
+        background-color: #eee;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 45px;
+        margin-bottom: 20px;
+    
+    }
+    
+    /*.badge span {
+        background-color: #fffbec;
+        width: 80px;
+        height: 25px;
+        padding-bottom: 3px;
+        border-radius: 5px;
+        display: flex;
+        color: #ffc91a;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+    }*/
+    
+    #badgespan{
+        background-color: #fffbec;
+        width: 80px;
+        height: 25px;
+        padding-bottom: 3px;
+        border-radius: 5px;
+        display: flex;
+        color: #f5bf0d;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+    
+    }
+    
+    .badge1 span{
+      background-color: #B2DFDB;
+        width: 180px;
+        height: 25px;
+        padding-bottom: 3px;
+        border-radius: 5px;
+        display: flex;
+        color: #00695C;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 8px;
+        overflow: hidden;
+    
+    
+    }
+    
+    .progress {
+        height: 10px;
+        border-radius: 10px
+    }
+    
+    .progress div {
+        background-color: red
+    }
+    
+    .text1 {
+        font-size: 14px;
+        font-weight: 400
+    }
+    
+    .text2 {
+        color: #a5aec0;
+        
+    }
+    
+    .address{
+        font-size: 24px;
+        font-weight: 600
+    
+    }
+    .info{
+      color: #4c40e0;
+        font-size: 21px;
+        font-weight: 600
+    }
+    .button{
+    
+      color: #13b64a;
+        background-color: #B2DFDB;
+        padding: 3px 20px;
+        border-radius: 2px
+    }
+            #oxysection2::-webkit-scrollbar{
+                width: 5px;
+            }
+            #oxysection2::-webkit-scrollbar-track{
+                background: #FFFFFF;
+                border-radius: 5px;
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, .2);
+    
+            }
+            #oxysection2::-webkit-scrollbar-thumb{
+                border-radius: 10px;
+                background: rgb(186, 186, 186);
+            }
+            .head {
+                text-align: center;
+                color: #002060;
+                font-size: 30px;
+                font-weight: 400;
+                margin-bottom: 5px;
+            }
+            .circle{
+                background-color: rgba(255, 255, 255, 0.974);
+                height: 100px;
+                width: 100px;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: -90px auto 0;
+                margin-bottom: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            }
+            .circle-img{
+                width: 70px;
+                max-width: 100%;
+                border: 0;
+                margin: auto;
+                margin-left: 15px;
+                margin-bottom: 18px;
+                 
+    
+            }
+    
+            
+    @media screen and (max-width: 768px) {
+    .info{
+      color: #4c40e0;
+        font-size: 18px;
+        font-weight: 500
+    }
+    .head {
+                text-align: center;
+                color: #002060;
+                font-size: 15px;
+                font-weight: 300;
+                margin-bottom: 1px;
+            }
+    }
+        </style>
+    
+    </head>
+    <body>
+        <!--========== HEADER ==========-->
+        <header class="header">
+            <div class="header__container">
+                <img src="coa.png" alt="" class="header__img">
+
+                <a href="/" class="header__logo">#IndiaFightBack</a>
+                <!-- <p class="project-names">INDIACan</p> -->
+                <a href="#MAPDIV">
+                    <div class="header__search">
+                        <input type="search" placeholder="Search" class="header__input">
+                        <i class='bx bx-search header__icon'></i>
+                    </div>
+                </a>
+    
+                <div class="header__toggle">
+                    <i class='bx bx-menu' id="header-toggle"></i>
+                </div>
+            </div>
+        </header>
+
+        <!--========== NAV ==========-->
+        <div class="nav" id="navbar">
+            <nav class="nav__container">
+                <div>
+                    <a href="#" class="nav__link nav__logo">
+                        <i class='bx bxs-virus-block nav__icon' ></i>
+                        <span class="nav__logo-name">IndiaCan</span>
+                    </a>
+    
+                    <div class="nav__list">
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle"></h3>
+                            <br>
+    
+                            <a href="index.html" class="nav__link">
+                                <i class='bx bx-home nav__icon' ></i>
+                                <span class="nav__name">Dashboard</span>
+                            </a>
+                            
+                            
+                            <a href="map.html" class="nav__link">
+                                <i class='bx bx-user nav__icon' ></i>
+                                <span class="nav__name">Vaccination</span>
+                            </a>
+                            
+
+                            <a href="register.html" class="nav__link">
+                               <i class='bx bx-building-house nav__icon' ></i>
+                                <span class="nav__name">Hospital Beds</span>
+                            </a>
+                            <a href="findoxygen.html" class="nav__link">
+                                <i class='bx bx-cloud nav__icon' ></i>
+                                <span class="nav__name">Oxygen Retailer</span>
+                            </a>
+                            <a href="team.html" class="nav__link">
+                                <i class='bx bxl-dev-to nav__icon' ></i>
+                                <span class="nav__name">Team</span>
+                            </a>
+                            <a href="qrs.html" class="nav__link">
+                                <i class='bx bx-qr-scan nav__icon' ></i>
+                                <span class="nav__name">Scan Certificate</span>
+                            </a>
+                        </div>
+    
+                        
+                    </div>
+                </div>
+
+                <a href="/" class="nav__link nav__logout">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
+
+        <!--========== CONTENTS ==========-->
+        
+                <div class="container-fluid mt-5">
+                    <div class="row">
+                        <div class="col-md-10 col-12 mx-auto">
+                            <section class="oxy_section" data-aos="fade-up">
+                                <div class="circle">
+                                    <img src="o2.png" alt="" class="circle-img">
+                                </div>
+                                <h3 class="head fw-bold">Oxygen Cylinder Retailers</h3>
+                                <p id="headinfo" class="fw-normal pt-2 pb-3 text-justify text-center text-capitalize">verified crowdsourced initiative to track O2 cylinder Retailer of all over INDIA</p>
+                                <div class="row">
+                                    <div class="col-sm-6 mt-sm-0 mt-3"> <span class="text-muted">Select a State</span> 
+            
+                                        <select id="oxy_stateList" class="form-select">
+                                            <option value="null">Select State</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6 mt-sm-0 mt-3"> <span class="text-muted">Select a District</span> 
+                                    <select id="oxy_DistrictList" class="form-select">
+                                        <option value="null">Select District</option>
+                                    </select>
+                                    </div>
+            
+                                
+            
+                            </section>
+            
+                            <section class="oxy_section2" id="oxysection2">
+                                <p id="headinfo" class="fw-normal pt-1 pb-0 mt-0 mb-0 text-justify text-muted text-capitalize"><i class='bx bxs-coin-stack'></i> &nbsp; accessing government database using life.CoronasafeIndia.org API</p>
+                                
+                                <div id="oxyList" class="mt-1">
+            
+                                </div>
+            
+                            </section>
+                            </div></div></div>
+            
+
+<!--========== CDN JS ==========-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js" integrity="sha512-NWNl2ZLgVBoi6lTcMsHgCQyrZVFnSmcaa3zRv0L3aoGXshwoxkGs3esa9zwQHsChGRL4aLDnJjJJeP6MjPX46Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    var StateDefaultList = document.getElementById("oxy_stateList");
+    var DistrictListValue = document.getElementById("oxy_DistrictList");
+    var oxywaladiv = document.getElementById("oxyList");
+    var badgev = document.getElementById("badgespan");
+    var oxysection2 = document.getElementById("oxysection2");
+    
+    window.onload = function() {
+        fetch("sample2.json")
+        .then((testres) => testres.json())
+        .then((testdata) => {
+            console.log(testdata);
+
+            let newArrayoxy = [];
+            
+            // Declare an empty object
+            let uniqueObjectoxy = {};
+            
+            for( var x in testdata.data){
+                //console.log(testdata.data[x].state);
+                // Extract the title
+                objTitleoxy = testdata.data[x]['state'];
+            
+                // Use the title as the index
+                uniqueObjectoxy[objTitleoxy] = testdata.data[x];
+            }
+            for (x in uniqueObjectoxy) {
+                newArrayoxy.push(uniqueObjectoxy[x]);
+            }
+            console.log(newArrayoxy);
+
+            for(var j=0; j < newArrayoxy.length; j++){
+                    // console.log(data1[i].DISTRICT);
+                        //var dlist = newArray[j].DISTRICT
+                        //console.log(dlist);
+                        
+                        
+                        
+                        
+                        var option1 = document.createElement("option");
+                        option1.text = newArrayoxy[j].state
+                        option1.value = newArrayoxy[j].state
+                        StateDefaultList.add(option1);
+
+                    }
+        });
+    }
+
+    StateDefaultList.addEventListener("change", function(){
+        DistrictListValue.innerText = "";
+
+        var StateListValue = StateDefaultList.value;
+        fetch("sample2.json")
+        .then((testres) => testres.json())
+        .then((testdata) => {
+            let newArrayoxy = [];
+            
+            
+            let uniqueObjectoxy = {};
+            
+            for( var x in testdata.data){
+
+                if(testdata.data[x].state == StateListValue){
+                //console.log(testdata.data[x].state);
+                // Extract the title
+                objTitleoxy = testdata.data[x]['district'];
+            
+                // Use the title as the index
+                uniqueObjectoxy[objTitleoxy] = testdata.data[x];
+                }
+            }
+            for (x in uniqueObjectoxy) {
+                newArrayoxy.push(uniqueObjectoxy[x]);
+            }
+            console.log(newArrayoxy);
+
+                var option1 = document.createElement("option");
+                option1.text = "Please Select District";
+                option1.value = "Null";
+                DistrictListValue.add(option1);
+
+            for(var j=0; j < newArrayoxy.length; j++){
+                    // console.log(data1[i].DISTRICT);
+                        //var dlist = newArray[j].DISTRICT
+                        //console.log(dlist);
+                        
+                        
+                        
+                        
+                        var option1 = document.createElement("option");
+                        option1.text = newArrayoxy[j].district
+                        option1.value = newArrayoxy[j].district
+                        DistrictListValue.add(option1);
+
+                    }
+            
+
+        });
+
+
+    });
+
+    DistrictListValue.addEventListener("change", function(){
+        var indivisualDistrict = DistrictListValue.value;
+        console.log(indivisualDistrict);
+        fetch("sample2.json")
+        .then((testres) => testres.json())
+        .then((testdata) => {
+            oxywaladiv.innerHTML = " ";
+            document.getElementById("oxysection2").style.visibility = "visible";
+            oxysection2.style.overflowY = "scroll";
+            oxysection2.style.height = "700px";
+
+            for( var x in testdata.data){
+
+                if(testdata.data[x].district == indivisualDistrict){
+                    //console.log(testdata.data[x].title);
+                    var center_name = testdata.data[x].title;
+                    var center_add = testdata.data[x].address;
+                    var center_dist = testdata.data[x].district;
+                    var center_state = testdata.data[x].state;
+                    var center_contact = testdata.data[x].phone_1;
+                    var center_status = testdata.data[x].verification_status;
+                    var center_ass = testdata.data[x].data_name;
+                    var center_catagory = testdata.data[x].category;
+                    var center_ava = testdata.data[x].quantity_available;
+
+                    console.log(center_status);
+
+                   if(testdata.data[x].verification_status == "pending (not verified)"){
+                        center_status = "Pending";
+                        
+
+                    }else if(testdata.data[x].verification_status == "Call not answered"){
+                        center_status = "Pending";
+                       
+
+                    }else if(testdata.data[x].verification_status == "Phone Unreachable"){
+                        center_status = "Pending";
+                        
+
+                    }else if(typeof testdata.data[x].verification_status === 'undefined'){
+                        center_status = "Pending";
+                        
+
+                    }else if(testdata.data[x].verification_status === "unreachable"){
+                        center_status = "Pending";
+
+                    }
+
+                    var oxy_div = document.createElement("div");
+                    oxy_div.innerHTML = 
+                    "<div class='row'>"+
+                        "<div class='col-md-4 mx-auto w-100 mt-2 mb-2'>"+
+                            "<div class='card p-3 mb-2 shadow'>"+
+                                "<div class='d-flex justify-content-between'>"+
+                                    "<div class='d-flex flex-row align-items-center'>"+
+                                        "<div class='ms-2 c-details'>"+
+                                            "<h4 class='mb-0 info'>"+center_name+"</h4> <span class='mt-1'><b> <i class='bx bx-map'></i>  "+center_add+" ,  "+ center_state +"</b></span>"+
+                                        "</div>"+
+                                    "</div>"+
+                                    "<div class='badge text-capitalize'> <span id='badgespan'>"+center_status+"</span> </div>"+
+                                    "</div>"+
+                                    "<hr>"+
+                                    "<div class='mt-2'>"+
+                                        "<div class='badge1'> <span>Contact:<b>&nbsp"+center_contact+"</b></span></div>"+
+                                        "<h6 class='association'>Associated with:  <b>"+center_ass+"</b></h6><span>Catagory:  <b>"+center_catagory+" Suppiler</b></span>"+
+                                        "<div class='mt-1'>"+
+                                            "<hr>"+
+                                            "<div class='mt-3'> <span class='text1'>Available Capacity: <b>"+center_ava+"</b> <span class='text2'>Oxygen Cylinder</span></span> </div>"+
+                                            "</div>"+
+                                            "</div>"+
+                                            "</div>"+
+                                            "</div>"+
+                                            "</div>";
+
+
+
+
+
+                    document.getElementById("oxyList").appendChild(oxy_div);
+
+                }
+            }
+
+        })
+
+    });
+
+
+
+
+</script>
+
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+   AOS.init({
+       offset: 150,
+       duration: 1000
+   });
+ </script>
+        <!--========== MAIN JS ==========-->
+        <script>
+            /*==================== SHOW NAVBAR ====================*/
+const showMenu = (headerToggle, navbarId) =>{
+    const toggleBtn = document.getElementById(headerToggle),
+    nav = document.getElementById(navbarId)
+    
+    // Validate that variables exist
+    if(headerToggle && navbarId){
+        toggleBtn.addEventListener('click', ()=>{
+            // We add the show-menu class to the div tag with the nav__menu class
+            nav.classList.toggle('show-menu')
+            // change icon
+            toggleBtn.classList.toggle('bx-x')
+        })
+    }
+}
+showMenu('header-toggle','navbar')
+
+/*==================== LINK ACTIVE ====================*/
+const linkColor = document.querySelectorAll('.nav__link')
+
+function colorLink(){
+    linkColor.forEach(l => l.classList.remove('active11'))
+    this.classList.add('active11')
+}
+
+linkColor.forEach(l => l.addEventListener('click', colorLink));
+
+        </script>
+    </body>
+</html>
